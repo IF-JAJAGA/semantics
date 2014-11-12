@@ -21,10 +21,11 @@ etu:1234567 insa:inscrit ue:alia , ue:se ;
 foaf:name "Alice" .
 
 etu:2345678 insa:inscrit ue:se , ue:datamining ;
-insa:binome etu:3456789;
+insa:binome etu:3456789, etu:1234567;
 foaf:name "Basile" .
 
 etu:3456789 insa:inscrit ue:qual , ue:se ;
+insa:binome etu:4567890, etu:1234567;
 foaf:name "Charlotte" .
 
 etu:4567890 insa:inscrit ue:alia , ue:se , ue:datamining , ue:qual ;
