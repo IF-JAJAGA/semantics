@@ -1,4 +1,4 @@
-@prefix insa: <http://insa-lyon.fr/insa#> .
+@prefix insa: <http://insa-lyon.fr#> .
 @prefix ue: <http://insa-lyon.fr/ue#> .
 @prefix etu: <http://insa-lyon.fr/etudiant#> .
 @prefix form: <http://insa-lyon.fr/formation#> .
