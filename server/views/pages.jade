@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  each page, index in pages
+    p.lead
+      a(href='/pages/' + (index + 1))= page.uri
