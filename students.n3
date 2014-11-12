@@ -8,6 +8,9 @@
 ue:alia insa:formation form:4if;
 insa:departement insa:informatique .
 
+ue:pourrie insa:formation form:4if ;
+insa:departement insa:gcu .
+
 ue:se insa:formation form:4if;
 insa:departement insa:informatique .
 
