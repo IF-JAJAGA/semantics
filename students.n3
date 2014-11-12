@@ -1,0 +1,38 @@
+@prefix insa: <http://insa-lyon.fr.fr#> .
+@prefix ue: <http://insa-lyon.fr/ue#> .
+@prefix etu: <http://insa-lyon.fr/etudiant#> .
+@prefix form: <http://insa-lyon.fr/formation#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+
+ue:alia insa:formation form:4if;
+insa:departement insa:informatique .
+
+ue:se insa:formation form:4if;
+insa:departement insa:informatique .
+
+ue:qual insa:formation form:4if;
+insa:departement insa:informatique .
+
+ue:datamining insa:formation form:4if;
+insa:departement insa:informatique .
+
+etu:1234567 insa:inscrit ue:alia , ue:se ;
+foaf:name "Alice" .
+
+etu:2345678 insa:inscrit ue:se , ue:datamining ;
+insa:binome etu:3456789;
+foaf:name "Basile" .
+
+etu:3456789 insa:inscrit ue:qual , ue:se ;
+foaf:name "Charlotte" .
+
+etu:4567890 insa:inscrit ue:alia , ue:se , ue:datamining , ue:qual ;
+insa:binome etu:1234567 ;
+foaf:name "Damien" .
+
+form:3if insa:departement insa:informatique .
+form:4if insa:departement insa:informatique .
+form:5if insa:departement insa:informatique .
+
+insa:informatique a foaf:organization .
