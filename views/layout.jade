@@ -6,9 +6,11 @@ html(lang='fr')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     title= title
-    link(rel='stylesheet', href='/css/bootstrap.min.css', async)
     style
-      include ./includes/css/semantics.min.css
+      include ./includes/css/above.min.css
+    //
+      link(rel='stylesheet', href='/css/bootstrap.min.css', async)
+      link(rel='stylesheet', href='/css/semantics-template.css', async)
 
   body
     include ./includes/menu.jade
@@ -17,4 +19,4 @@ html(lang='fr')
         block content
 
     // jQuery + Bootstrap JavaScript
-    script(src='jBootstrap.min.js')
+    script(src='/js/jBootstrap.min.js')
