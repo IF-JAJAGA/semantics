@@ -6,8 +6,9 @@ html(lang='fr')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     title= title
-    link(rel='stylesheet', href='/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/css/semantics-template.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css', async)
+    style
+      include ./includes/css/semantics.min.css
 
   body
     include ./includes/menu.jade
