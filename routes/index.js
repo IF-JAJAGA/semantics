@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+var
+  // App
+  app = require('../app'),
 
-/* GET home page. */
+  // Router
+  express = require('express'),
+  router = express.Router();
+
+module.exports = router;
+
+/* GET home page */
 router.get('/', function(req, res) {
   res.render('index', {title: 'Bienvenue sur le Semantics web (3.0)'});
 });
-
-module.exports = router;

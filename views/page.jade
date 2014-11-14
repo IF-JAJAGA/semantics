@@ -7,11 +7,14 @@ block content
   h1= title
   table.lead.table.table-striped.table-bordered
     tr
-      th Uri
-      th Contenu
-      th Autre attribut
+      th ID
+      each value, key in page
+        th= key
     tr
-      td
-        a(href=page.uri)= page.uri
-      td Rien pour l'instant
-      td Toujours rien
+      td= id
+      each value, key in page
+        if key === 'uri'
+          td
+            a(href=page.uri)= page.uri
+        else
+          td= value
