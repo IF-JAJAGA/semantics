@@ -10,30 +10,50 @@ var
   router = express.Router(),
 
   // Helper
-  debug = require('debug')('pages');
+  debug = require('debug')('pages'),
+
+  // Node api
+  crypto = require('crypto');
 
 /* GET pages listing */
 router.get('/', function(req, res) {
+  var pages = [];
   debug('Getting all pages');
-  res.render('pages', {title: 'Liste des pages', pages: []});
+  redis.lrange('pages', 0, -1, function (errMessage, replies) {
+    var i;
+
+    for (i in replies) {
+      pages.push({
+        id: replies[i].replace(/^page:/, '')
+      });
+    }
+    debug(pages);
+    res.render('pages', {title: 'Liste des pages', pages: pages});
+  });
 });
 
 /* GET specific page by id */
 router.get('/:id', function(req, res, next) {
   var
     err,
-    id = req.params.id;
+    id = req.params.id,
+    shasum = crypto.createHash('sha1'),
+    hId;
+
+  // Hashing the id with SHA1 strategy
+  shasum.update(id);
+  hId = shasum.digest('hex');
 
   debug('Getting page of id: ' + id);
 
-  redis.exists('page:' + id, function (errMessage, pageExists) {
+  redis.exists('page:' + hId, function (errMessage, pageExists) {
     if (errMessage) {
       err = new Error(errMessage);
       err.status = 500;
       return next(err);
     }
     if (pageExists) {
-      redis.hgetall('page:' + id, function (errMessage, page) {
+      redis.hgetall('page:' + hId, function (errMessage, page) {
         if (!errMessage) {
           res.render('page', {
             title: 'Détail de la page',
@@ -64,9 +84,16 @@ router.post('/:id', function (req, res, next) {
 
 /* PUT (creates) new page with :id, and attributes in parameter */
 router.put('/:id', function(req, res, next) {
-  var id = req.params.id;
+  var id = req.params.id,
+    shasum = crypto.createHash('sha1'),
+    hId;
+
+  // Hashing the id with SHA1 strategy
+  shasum.update(id);
+  hId = shasum.digest('hex');
+
   debug('Creating page of id: ' + id);
-  redis.exists('page:' + id, function (errMessage, pagesExists) {
+  redis.exists('page:' + hId, function (errMessage, pagesExists) {
     var key;
     if (!errMessage) {
       if (!pagesExists) {
@@ -81,8 +108,9 @@ router.put('/:id', function(req, res, next) {
 
         // Adding a new set with all parameters as hash values
         for (key in req.body) {
-          redis.hset('page:' + id, key, req.body[key]);
+          redis.hset('page:' + hId, key, req.body[key]);
         }
+        redis.rpush('pages', id);
 
         // Everything went fine
         res.status(200).end();

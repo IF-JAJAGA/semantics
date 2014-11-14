@@ -7,10 +7,8 @@ block content
   h1= title
   table.lead.table.table-striped.table-bordered
     tr
-      th #
-      th Détails
-    each page, index in pages
+      th ID
+    each page in pages
       tr
-        td= index + 1
         td
-          a(href='/pages/' + (index + 1)) + de détails
+          a(href='/pages/' + page.id)= page.id

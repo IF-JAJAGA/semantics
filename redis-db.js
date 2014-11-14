@@ -5,6 +5,8 @@ var
   // Database
   redis = require('redis'),
   client,
+
+  // Node api
   rtg;
 
 if (process.env.REDISTOGO_URL) {
