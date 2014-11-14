@@ -1,12 +1,17 @@
 extends layout
 
+block link
+  -var active = '/pages'
+
 block content
   h1= title
-  dl.lead
-    dt Uri
-    dd
-      a(href=page.uri)= page.uri
-    dt Contenu
-    dd Rien pour l'instant
-    dt Autre attribut
-    dd Toujours rien
+  table.lead.table.table-striped.table-bordered
+    tr
+      th Uri
+      th Contenu
+      th Autre attribut
+    tr
+      td
+        a(href=page.uri)= page.uri
+      td Rien pour l'instant
+      td Toujours rien

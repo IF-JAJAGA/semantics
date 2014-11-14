@@ -1,3 +1,8 @@
+block link
+  -var active = '/'; //default
+
+-var menu = { '/': 'Maison', '/pages': 'Pages' };
+
 nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
   .container
     .navbar-header
@@ -9,7 +14,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       a.navbar-brand(href='/') Semantics 3.0
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active
-          a(href='/') Maison
-        li
-          a(href='/pages') Pages
+        each val, key in menu
+          if active === key
+            li.active
+              a(href=key, title=val)= val
+          else
+            li
+              a(href=key, title=val)= val

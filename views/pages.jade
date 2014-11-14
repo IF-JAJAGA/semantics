@@ -1,7 +1,16 @@
 extends layout
 
+block link
+  -var active = '/pages'
+
 block content
   h1= title
-  each page, index in pages
-    p.lead
-      a(href='/pages/' + (index + 1))= page.uri
+  table.lead.table.table-striped.table-bordered
+    tr
+      th #
+      th Détails
+    each page, index in pages
+      tr
+        td= index + 1
+        td
+          a(href='/pages/' + (index + 1)) + de détails
