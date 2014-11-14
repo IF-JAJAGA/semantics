@@ -3,8 +3,7 @@ var
   app = require('../app'),
 
   // Database
-  redis = app.get('redis'),
-  client = app.get('redis client'),
+  redis = app.get('redis client'),
 
   // Router
   express = require('express'),
@@ -27,14 +26,14 @@ router.get('/:id', function(req, res, next) {
 
   debug('Getting page of id: ' + id);
 
-  client.exists('page:' + id, function (errMessage, pageExists) {
+  redis.exists('page:' + id, function (errMessage, pageExists) {
     if (errMessage) {
       err = new Error(errMessage);
       err.status = 500;
       return next(err);
     }
     if (pageExists) {
-      client.hgetall('page:' + id, function (errMessage, page) {
+      redis.hgetall('page:' + id, function (errMessage, page) {
         if (!errMessage) {
           res.render('page', {
             title: 'Détail de la page',
@@ -67,7 +66,7 @@ router.post('/:id', function (req, res, next) {
 router.put('/:id', function(req, res, next) {
   var id = req.params.id;
   debug('Creating page of id: ' + id);
-  client.exists('page:' + id, function (errMessage, pagesExists) {
+  redis.exists('page:' + id, function (errMessage, pagesExists) {
     var key;
     if (!errMessage) {
       if (!pagesExists) {
@@ -82,7 +81,7 @@ router.put('/:id', function(req, res, next) {
 
         // Adding a new set with all parameters as hash values
         for (key in req.body) {
-          client.hset('page:' + id, key, req.body[key]);
+          redis.hset('page:' + id, key, req.body[key]);
         }
 
         // Everything went fine

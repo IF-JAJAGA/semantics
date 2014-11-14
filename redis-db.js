@@ -4,7 +4,17 @@ var
 
   // Database
   redis = require('redis'),
+  client,
+  rtg;
+
+if (process.env.REDISTOGO_URL) {
+  // Heroku connection for redis
+  rtg = require("url").parse(process.env.REDISTOGO_URL);
+  client = redis.createClient(rtg.port, rtg.hostname);
+  redis.auth(rtg.auth.split(":")[1]);
+} else {
   client = redis.createClient();
+}
 
 app.set('redis', redis);
 app.set('redis client', client);
