@@ -49,14 +49,14 @@ if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
 
-    if (req.accepts('text/plain')) {
-      res.set('Content-Type', 'text/plain');
-      res.send('Page ' + id + ' successfully deleted\r\n');
-    } else {
+    if (req.accepts('text/html')) {
       res.render('alert', {
         message: err.message,
         error: err
       });
+    } else if (req.accepts('json')) {
+      res.set('Content-Type', 'application/json');
+      res.status(err.status).send(JSON.stringify({err: err}) + '\r\n');
     }
   });
 }
