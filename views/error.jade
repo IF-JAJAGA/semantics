@@ -1,7 +1,0 @@
-extends layout
-
-block content
-  h1 #{error.status}: #{message}
-  if error.stack
-    h2 Stack trace:
-    pre #{error.stack}

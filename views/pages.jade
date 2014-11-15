@@ -4,7 +4,7 @@ block link
   -var active = '/pages'
 
 block content
-  h1= title
+  h1= title || 'Détail de la page'
   table.lead.table.table-striped.table-bordered
     tr
       th ID
