@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+var
+  // App
+  app = require('../app'),
+
+  // Helper
+  debug = require('debug')('server'),
+
+  // Server
+  server;
+
+app.set('port', process.env.PORT || 3000);
+
+server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+  debug('To change the port, export PORT=<port> and restart');
+});

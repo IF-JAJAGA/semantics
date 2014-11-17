@@ -1,0 +1,21 @@
+extends layout
+
+block link
+  -var active = '/pages'
+
+block content
+  h1= title || 'Liste des pages'
+  table.lead.table.table-striped.table-bordered.table-responsive
+    tr
+      th ID
+    tr
+      td= id
+    each value, key in page
+      tr
+        th= key
+      tr
+        if key === 'uri'
+          td
+            a(href=page.uri)= page.uri
+        else
+          td= value

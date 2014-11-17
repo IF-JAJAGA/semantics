@@ -1,0 +1,14 @@
+extends layout
+
+block link
+  -var active = '/pages'
+
+block content
+  h1= title || 'Détail de la page'
+  table.lead.table.table-striped.table-bordered
+    tr
+      th ID
+    each page in pages
+      tr
+        td
+          a(href='/pages/' + page.id)= page.id

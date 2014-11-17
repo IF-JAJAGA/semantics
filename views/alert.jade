@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  if !error
+    div(class='alert alert-' + (type || 'info'), role='alert')= message
+  else
+    h1.alert.alert-danger ⚠ #{error.status}: #{message} ⚠
+    if error.stack
+      pre.text-left= error.stack

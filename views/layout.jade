@@ -1,0 +1,23 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    -var defaultTitle = 'Semantics (web 3.0)'
+    title= defaultTitle + ' - ' + title || defaultTitle
+    style
+      include ./includes/css/above.min.css
+    //
+      link(rel='stylesheet', href='/css/bootstrap.min.css', async)
+      link(rel='stylesheet', href='/css/semantics-template.css', async)
+
+  body
+    include ./includes/menu.jade
+    .container
+      .semantics-template
+        block content
+
+    // jQuery + Bootstrap JavaScript
+    script(src='/js/jBootstrap.min.js')
