@@ -1,0 +1,140 @@
+{
+ "request": "combien de patates par kilomètre carré",
+  "results": {
+    "fr.wikipedia.org/wiki/Île-du-Prince-Édouard": {
+		      {
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-views": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard": {
+		    "http://www.w3.org/1999/xhtml/vocab#license": [
+		      {
+		        "type": "uri", 
+		        "value": "http://creativecommons.org/licenses/by-sa/3.0/deed.fr"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-Contribuer": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-logo": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#banner"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-tb": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-variants": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#footer": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#contentinfo"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#content": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#main"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-navigation": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-personal": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-coll-print_export": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-search": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#search"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-cactions": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-namespaces": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }, 
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-lang": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri", 
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }
+		}
+    }
+  },
+  pages: [
+    "fr.wikipedia.org/wiki/Rodrigues",
+    "http://www.persee.fr/web/revues/home/prescript/article/cea_0008-0055_1960_num_1_2_3666",
+    "www.linguee.fr/francais-anglais/traduction/carré+de+terre.html",
+    "www.linguee.fr/francais-anglais/traduction/taille+carrée.html",
+    "books.google.fr/books?isbn=2763776353",
+    "www.cic.gc.ca/francais/ressources/publications/decouvrir/section-13.asp",
+    "http://www.liberation.fr/monde/2014/11/10/le-cannabis-legal-c-est-bon-pour-le-fisc_1140254",
+    "http://soc.culture.quebec.narkive.com/XhipLNTC/combien-mesure-un-terrain-de-football",
+    "http://bigbrowser.blog.lemonde.fr/2011/11/11/malbouffe-mcdo-vu-du-ciel-cartographie-dun-empire/"
+  ]
+}
