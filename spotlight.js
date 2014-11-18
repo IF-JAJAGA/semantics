@@ -15,8 +15,7 @@ var
   result = {}, // Contains the result graph (all RDF triples)
 
   annotate,
-  handleResources,
-  done;
+  handleResources;
 
 /**
  * @callback doneCallback
@@ -26,23 +25,29 @@ var
 
 /**
  * @param {object} options - The options (with at least the text)
- * @param options.text {string!} - The text to annotate
- * @param options.confidence {number=0.2}
+ * @param userOption.text {string!} - The text to annotate
+ * @param userOption.confidence {number=0.2}
  *   - Percentage of confidence required to allow result
- * @param options.support {number=20}
+ * @param userOption.support {number=20}
  *   - Number of wikipedia link referencing a result
- * @param options.live {boolean=false}
+ * @param userOption.live {boolean=false}
  *   - Whether to ask to live.dbpedia instead of dbpedia
  * @param {doneCallback} done - Gives the result (or err if something was wrong)
  */
-module.exports.annotate = function(dbpediaOptions, doneCallback) {
-  // Global variable for the done callback
-  done = doneCallback;
+module.exports.annotate = function(userOptions, done) {
+  var reqOptions;
 
-  dbpediaRequest = _.extend({
+  userOptions = _.extend({
     confidence: 0.2,
-    support: 20
-  }, dbpediaOptions);
+    support: 20,
+    live: false
+  }, userOptions);
+
+  reqOptions = {
+    confidence: userOptions.confidence,
+    support: userOptions.support,
+    text: userOptions.text
+  };
 
   // DBPedia Spotlight request options
   options = {
@@ -51,17 +56,28 @@ module.exports.annotate = function(dbpediaOptions, doneCallback) {
     headers: {
       'Accept': 'application/json'
     },
-    body: querystring.stringify(dbpediaRequest)
+    body: querystring.stringify(reqOptions)
   };
   request(options, function(err, res, body) {
+    var resources;
     debug('Got response for ' + options.url);
+    try {
+      resources = JSON.parse(body).Resources;
+    } catch (e) {
+      debug(body);
+      err = e;
+    }
     if (err) return done(new Error(err));
-
-    handleResources(JSON.parse(body).Resources);
+    handleResources(JSON.parse(body).Resources, done);
   });
 };
 
-handleResources = function(resources) {
+/**
+ * Finds all neighbors in the DBPedia RDF graph for a list of URI from dbpedia
+ * @param {Array} resources - List of URI (as strings)
+ * @param {doneCallback} done - Gives the result (or err if something was wrong)
+ */
+handleResources = function(resources, done) {
   var result = {};
 
   async.each(resources, function(resource, next) {
@@ -100,6 +116,6 @@ handleResources = function(resources) {
   }, function(err) {
     if (err) return done(new Error(err));
 
-    done(result);
+    done(null, result);
   });
 }
