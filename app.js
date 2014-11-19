@@ -32,6 +32,7 @@ app.use(require('./redis-db'));
 // Routes setup
 app.use('/', require('./routes/index'));
 app.use('/pages', require('./routes/pages'));
+app.use('/search', require('./routes/search'));
 
 // No route worked: catch 404 and forward to error handler
 app.use(function(req, res, next) {
