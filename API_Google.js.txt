@@ -1,0 +1,24 @@
+var API_KEY = 'AIzaSyAsKc9-6FZUvpKPPq39dYUHcHIPUPy6fKU'
+
+var google = require('node-google-api')({
+    apiKey: API_KEY,
+    debugMode: true // Throws errors instead of passing them silently.
+});
+
+var CX = '016583123162265953650:aiks_s3sch8';
+var SEARCH = 'Toto';
+google.build(function(api){
+	api.customsearch.cse.list({cx: CX, q: SEARCH, auth: API_KEY}, function(result){
+		if(result.error){
+			console.log('An error occured', result);
+			return;
+		}
+		
+		var uri_tab = [];
+		for(var i in result.items){
+			uri_tab.push(result.items[i].link);
+		}
+		console.log(JSON.stringify({request: result.queries.request[0].searchTerms,
+							pages: uri_tab}, undefined, 2));
+	})
+});
