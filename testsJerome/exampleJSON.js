@@ -6250,7 +6250,6 @@
 					console.log(val.value);
 				
 				}
-			
 			}
 		}
 	}
