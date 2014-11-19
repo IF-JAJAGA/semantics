@@ -5,8 +5,20 @@ block content
   p.lead
     | Bienvenue sur le superbe projet de web sémantique (web 3.0) de l'hexanôme H4201!
     br
-    | Le code complet de ce site est disponible sur
+    | Le code complet de ce site est disponible sur 
     a(title='Fork us on Github!', href='https://github.com/IF-JAJAGA/semantics/').
       https://github.com/IF-JAJAGA/semantics/
     |.
   include ./includes/search-field.jade
+
+  //-
+    -var page = {titre: 'exemple',uri:'http://example.com'}
+    -var pages = [3]
+    -var id = 3
+
+    include ./page.jade
+    include ./pages.jade
+
+    -var type = 'success'
+    -var message = 'La page 3 a été modifiée avec succès.'
+    include ./alert.jade

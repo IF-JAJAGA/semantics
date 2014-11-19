@@ -21,3 +21,10 @@ html(lang='fr')
 
     // jQuery + Bootstrap JavaScript
     script(src='/js/jBootstrap.min.js')
+    script.
+      (function(d, t) {
+          var g = document.createElement(t);
+          g.rel = 'stylesheet';
+          g.href = '/css/bootstrap.min.css';
+          d.appendChild(g);
+      }(document.head, 'link'));
