@@ -1,5 +1,5 @@
 form(method='get', action='/search')
   div.input-group
-    input.form-control(name='q',type='text')
+    input.form-control(name='q',type='text',value=(inputValue||''))
     span.input-group-btn
       input.btn.btn-default(type='submit', value='Send')
