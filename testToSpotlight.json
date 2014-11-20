@@ -122,7 +122,7 @@
 		      }
 		    ]
 		  },
-		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-lang": {
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-namespaces": {
 		    "http://www.w3.org/1999/xhtml/vocab#role": [
 		      {
 		        "type": "uri",
@@ -130,8 +130,34 @@
 		      }
 		    ]
 		  }
-		 }
-  },
+		 },
+    "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard2": {
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-views": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  },
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard": {
+		    "http://www.w3.org/1999/xhtml/vocab#license": [
+		      {
+		        "type": "uri",
+		        "value": "http://creativecommons.org/licenses/by-sa/3.0/deed.fr"
+		      }
+		    ]
+		  },
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-Contribuer": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }
+    }
+},
   "pages": [
     "fr.wikipedia.org/wiki/Rodrigues",
     "http://www.persee.fr/web/revues/home/prescript/article/cea_0008-0055_1960_num_1_2_3666",

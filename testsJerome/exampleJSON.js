@@ -1,6 +1,8 @@
 var 	json = require('../testToSpotlight.json'),
 	text = json["request"]["result"];
 
+//console.log(text.length);
+
 
 /*
  * subjectsList : Liste d'objets de la forme :
@@ -14,15 +16,15 @@ var subjectsList = [];
 
 resultats = json.results;
 
-
+console.log(resultats.length);
 
 
 /*
  * Functions
  */
-function find(subject, list){
+function find(sujet, list){
 	for (var i = 0, len = list.length; i < len; i++) {
-		if(list[i].sujet == subject){
+		if(list[i].subject == sujet){
 			console.log(list[i].nbApparitions);
 			return i;
 		}
@@ -48,7 +50,6 @@ for(root in resultats){
 	var text = resultats[root];
 	for(link in text){
 		if(link.indexOf(noGood) != 0 ){
-			console.log(link.toString());
 			var subjectInList = find(link,subjectsList);
 			if(subjectInList == undefined){
 				subjectsList.push(
@@ -59,7 +60,7 @@ for(root in resultats){
 				)
 			}
 			else {
-				subjectInList[subjectInList].frequency = parseInt(subjectInList[i].frequency) + 1 + "";
+				subjectsList[subjectInList].frequency = subjectsList[subjectInList].frequency + 1;
 			}
 			
 			
@@ -74,4 +75,5 @@ for(root in resultats){
 }
 
 console.log("Longueur de la liste : " + subjectsList.length);
-console.log("Le dernier element apparait : " + subjectsList[subjectsList.length-1].frequency + " fois.")
+console.log("Le troisième element " + subjectsList[2].subject + " apparait : " + subjectsList[2].frequency + " fois.")
+console.log("Le troisième element " + subjectsList[3].subject + " apparait : " + subjectsList[3].frequency + " fois.")
