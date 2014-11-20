@@ -1,13 +1,14 @@
-var example = [
-	{
+var example = [];
+	
+example.push({
 		"sujet" : "anything0",
 		"nbApparitions" : "2"
-	},
-  
-	{
+	})
+example.push({
 		"sujet" : "anything1",
 		"nbApparitions" : "6"
-	},
+	});
+	/*
 	{
 		"sujet" : "anything3",
 		"nbApparitions" : "10"
@@ -19,9 +20,7 @@ var example = [
 	{
 		"sujet" : "anything5",
 		"nbApparitions" : "5"
-	}
-]
-;
+	}*/
 
 
 function find(subject, list){
@@ -31,7 +30,7 @@ function find(subject, list){
 			return list[i];
 		}
 	}
-	console.log("Pas toruvé");
+	console.log("Pas trouvé");
 	return undefined;
 
 }
@@ -41,3 +40,4 @@ var elementTrouve = find("anything6", example);
 
 console.log(elementTrouve.sujet);
 console.log(elementTrouve.nbApparitions);
+
