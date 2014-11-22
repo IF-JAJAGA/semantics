@@ -1,8 +1,6 @@
 var 	json = require('../testToSpotlight.json'),
 	text = json["request"]["result"];
 
-//console.log(text.length);
-
 
 /*
  * subjectsList : Liste d'objets de la forme :
@@ -15,8 +13,6 @@ var 	json = require('../testToSpotlight.json'),
 var subjectsList = [];
 
 resultats = json.results;
-
-console.log(resultats.length);
 
 
 /*
@@ -36,10 +32,9 @@ function presentInBest(list, i){
 	for(var j=0, lenj=list.length; j<lenj; j++){
 		if(list[j] == i){
 			return 1;
-			j = lenj;
+		}
 	}
 	return 0;
-	}
 }
 
 /*
@@ -50,27 +45,23 @@ function presentInBest(list, i){
 function bestSubjects(subjectsList, size){
 	var toReturn=[];
 
+	if(size > subjectsList.length)	size = subjectsList.length;
+
 	var max = 0;
 	while(toReturn.length < size){
 		var maxBoucle = 0;
 		var addIndice = undefined;
 		for(var i=0, len=subjectsList.length; i<len; i++){
 			var freqTest = subjectsList[i].frequency;
-			console.log("freqTest : " + freqTest);
 			if(freqTest > maxBoucle && (max == 0 || freqTest <= max)){
 				var dejaPresent = presentInBest(toReturn, i);
-				console.log("avant if avec dejaPresent : " + dejaPresent);
 				if(dejaPresent == 0) {
-					console.log("Après if");
 					addIndice = i;
 					maxBoucle = freqTest;
-					console.log("maxBoucle : " + maxBoucle + " ; freqtest : " + freqTest);
 				}
 			}
 		}
-		console.log("addIndice : " + addIndice);
 		toReturn.push(addIndice);
-		console.log("toReturn : " + toReturn.toString());
 		if(max==0)	max = maxBoucle;
 	}
 	return toReturn;
@@ -97,7 +88,23 @@ for(root in resultats){
 				subjectsList.push(
 					{
 						"subject" : link,
-						"frequency" : 1
+						"frequency" : 1,
+						/*
+						 * TODO : solution pour stocker les prédicats, histoire de pas avoir à tout reparcourir une fois qu'on a classé nos sujets par fréquentations.
+						 * Membre triolets qui correspond à une liste de 
+						"triolets " : [
+							{
+								"role" : role,
+								"value" : value
+							},
+							{
+								"role2" : role2,
+								"value2" : value2
+							},
+							...
+						]
+						A la fin on parcourerait cette sous-liste triolets pour savoir quelle valeur on met dans notre affichage.
+						*/
 					}
 				)
 			}
@@ -108,15 +115,15 @@ for(root in resultats){
 			
 			var lien = text[link];
 			for(list in lien){
-				console.log(list.toString());
+				//console.log("list.toString : " + list.toString());
 				var val = lien[list][0];
-				console.log(val.value);
+				//console.log("val.value : " + val.value);
 			}
 		}
 	}
 }
 
-var bestsList = bestSubjects(subjectsList, 4);
+var bestsList = bestSubjects(subjectsList, 20);
 console.log("bestsList : " + bestsList.toString());
 
 console.log("Longueur de la liste : " + subjectsList.length);

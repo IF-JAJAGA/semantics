@@ -156,6 +156,40 @@
 		      }
 		    ]
 		  }
+    },
+    "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard3": {
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-views": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  },
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-Contribuer": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  },
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-namespaces": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  },
+		  "http://fr.wikipedia.org/wiki/Île-du-Prince-Édouard#p-lang": {
+		    "http://www.w3.org/1999/xhtml/vocab#role": [
+		      {
+		        "type": "uri",
+		        "value": "http://www.w3.org/1999/xhtml/vocab#navigation"
+		      }
+		    ]
+		  }
     }
 },
   "pages": [
