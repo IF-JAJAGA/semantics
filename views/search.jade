@@ -1,0 +1,29 @@
+extends layout
+
+mixin modal(id,title,text)
+  .modal.fade(id=id, role='dialog', aria-labelledby=id+'Label')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(type='button',data-dismiss='modal')
+            span(aria-hidden='true')
+              | &times;
+            span.sr-only
+              | Close
+          h4.modal-title(id=id+'Label')= title
+        .modal-body= text
+
+block content
+  .row
+    include ./includes/search-field.jade
+  .row
+  each entity in entities
+    .col-sm-6.col-md-4
+      .entity.thumbnail
+        img.entity-img(src=entity.thumbnail, alt=entity.caption)
+        .caption
+          h3= entity.name
+          p= entity.abstractShort
+          button.btn.btn-primary(type='button', data-toggle='modal',data-target='#abstractModal')
+            | détails
+          +modal('abstractModal',entity.name,entity.abstract)

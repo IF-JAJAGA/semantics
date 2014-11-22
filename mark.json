@@ -1,0 +1,1302 @@
+{
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanChiefExecutives"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/YagoLegalActor"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/LivingPeople"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Scholar110557854"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanBillionaires"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/YagoLegalActorGeo"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Intellectual109621545"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Organism100004475"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Person100007846"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/CausalAgent100007347"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/LivingThing100004258"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanPeopleOfJewishDescent"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Alumnus109786338"
+    },
+    {
+      "type": "uri",
+      "value": "http://schema.org/Person"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Object100002684"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Whole100003553"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+    },
+    {
+      "type": "uri",
+      "value": "http://xmlns.com/foaf/0.1/Person"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Engineer109615807"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Administrator109770949"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Director110014939"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Head110162991"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Leader109623038"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/HarvardUniversityPeople"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Billionaire110529684"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/RichPerson110529231"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Programmer110481268"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanComputerProgrammers"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/FacebookEmployees"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanVegetarians"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Vegetarian110747119"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Eater110042300"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/PhillipsExeterAcademyAlumni"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Employee110053808"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/ComputerUser109951274"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/ontology/Person"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/ontology/Agent"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Worker109632518"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/AmericanAtheists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Consumer109612848"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/User110741590"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/DirectorsOfFacebook"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/NonreligiousPerson109625789"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Disbeliever110015897"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Atheist109820044"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.dbpedia.org/resource/Q5"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.dbpedia.org/resource/Q215627"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/PeopleFromWhitePlains,NewYork"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/class/yago/Executive110069645"
+    }
+  ],
+  "http://www.w3.org/2002/07/owl#sameAs": [
+    {
+      "type": "uri",
+      "value": "http://pl.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://pt.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ka.dbpedia.org/resource/მარკ_ცუკერბერგი"
+    },
+    {
+      "type": "uri",
+      "value": "http://diq.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://sk.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh_min_nan.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://da.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://af.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://bar.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://si.dbpedia.org/resource/මාක්_ෂූකර්බර්ග්"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://kk.dbpedia.org/resource/Марк_Цукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://ro.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ru.dbpedia.org/resource/Цукерберг,_Марк"
+    },
+    {
+      "type": "uri",
+      "value": "http://rdf.freebase.com/ns/m.086dny"
+    },
+    {
+      "type": "uri",
+      "value": "http://bg.dbpedia.org/resource/Марк_Зукърбърг"
+    },
+    {
+      "type": "uri",
+      "value": "http://tl.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://simple.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://pnb.dbpedia.org/resource/مارک_زکربرگ"
+    },
+    {
+      "type": "uri",
+      "value": "http://ml.dbpedia.org/resource/മാർക്ക്_സക്കർബർഗ്"
+    },
+    {
+      "type": "uri",
+      "value": "http://cs.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://eu.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://sv.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://io.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://oc.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://mn.dbpedia.org/resource/Марк_Цукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://ne.dbpedia.org/resource/मार्क_जुकरवर्ग"
+    },
+    {
+      "type": "uri",
+      "value": "http://uk.dbpedia.org/resource/Марк_Цукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://fr.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ckb.dbpedia.org/resource/مارک_زوکەربێرگ"
+    },
+    {
+      "type": "uri",
+      "value": "http://gu.dbpedia.org/resource/માર્ક_ઝકરબર્ગ"
+    },
+    {
+      "type": "uri",
+      "value": "http://vi.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://bs.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://az.dbpedia.org/resource/Mark_Zukerberq"
+    },
+    {
+      "type": "uri",
+      "value": "http://ta.dbpedia.org/resource/மார்க்_சக்கர்பெர்க்"
+    },
+    {
+      "type": "uri",
+      "value": "http://lt.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://mt.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh_yue.dbpedia.org/resource/朱克伯格"
+    },
+    {
+      "type": "uri",
+      "value": "http://tg.dbpedia.org/resource/Марк_Эллиот_Тсукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.dbpedia.org/resource/Q36215"
+    },
+    {
+      "type": "uri",
+      "value": "http://hr.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://su.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://bn.dbpedia.org/resource/মার্ক_জাকারবার্গ"
+    },
+    {
+      "type": "uri",
+      "value": "http://pam.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://et.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://sq.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://hi.dbpedia.org/resource/मार्क_ज़ुकेरबर्ग"
+    },
+    {
+      "type": "uri",
+      "value": "http://war.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ku.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://it.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh.dbpedia.org/resource/马克·扎克伯格"
+    },
+    {
+      "type": "uri",
+      "value": "http://my.dbpedia.org/resource/မာ့ခ်_ဇက်ကာဘာ့ဂ်"
+    },
+    {
+      "type": "uri",
+      "value": "http://cy.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ko.dbpedia.org/resource/마크_저커버그"
+    },
+    {
+      "type": "uri",
+      "value": "http://sr.dbpedia.org/resource/Марк_Закерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://nl.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://gl.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ar.dbpedia.org/resource/مارك_زوكربيرج"
+    },
+    {
+      "type": "uri",
+      "value": "http://sw.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.bbc.co.uk/things/abe467d9-3bce-4f21-aa48-cc1b4b3877b5#id"
+    },
+    {
+      "type": "uri",
+      "value": "http://id.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://be_x_old.dbpedia.org/resource/Марк_Цукербэрг"
+    },
+    {
+      "type": "uri",
+      "value": "http://kab.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ja.dbpedia.org/resource/マーク・ザッカーバーグ"
+    },
+    {
+      "type": "uri",
+      "value": "http://ms.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://sh.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://es.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://fi.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://lv.dbpedia.org/resource/Marks_Cukerbergs"
+    },
+    {
+      "type": "uri",
+      "value": "http://hu.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://fa.dbpedia.org/resource/مارک_زاکربرگ"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.org/entity/Q36215"
+    },
+    {
+      "type": "uri",
+      "value": "http://th.dbpedia.org/resource/มาร์ก_ซักเคอร์เบิร์ก"
+    },
+    {
+      "type": "uri",
+      "value": "http://uz.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://ca.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://is.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://la.dbpedia.org/resource/Marcus_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://km.dbpedia.org/resource/ម៉ាក_ហ្សុកឃឺបឺក"
+    },
+    {
+      "type": "uri",
+      "value": "http://sw.cyc.com/concept/Mx4reVyBNAJKTnioth8M5PAUcw"
+    },
+    {
+      "type": "uri",
+      "value": "http://hy.dbpedia.org/resource/Մարկ_Ցուկերբերգ"
+    },
+    {
+      "type": "uri",
+      "value": "http://el.dbpedia.org/resource/Μαρκ_Ζάκερμπεργκ"
+    },
+    {
+      "type": "uri",
+      "value": "http://ky.dbpedia.org/resource/Цукерберг,_Марк"
+    },
+    {
+      "type": "uri",
+      "value": "http://he.dbpedia.org/resource/מארק_צוקרברג"
+    },
+    {
+      "type": "uri",
+      "value": "http://tk.dbpedia.org/resource/Mark_Zukerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://yago-knowledge.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://eo.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://be.dbpedia.org/resource/Марк_Цукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://de.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://te.dbpedia.org/resource/మార్క్_జూకర్‌బర్గ్"
+    },
+    {
+      "type": "uri",
+      "value": "http://mr.dbpedia.org/resource/मार्क_झुकरबर्ग"
+    },
+    {
+      "type": "uri",
+      "value": "http://mk.dbpedia.org/resource/Марк_Цукерберг"
+    },
+    {
+      "type": "uri",
+      "value": "http://tr.dbpedia.org/resource/Mark_Zuckerberg"
+    },
+    {
+      "type": "uri",
+      "value": "http://no.dbpedia.org/resource/Mark_Zuckerberg"
+    }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "fr"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "Цукерберг, Марк",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "مارك زوكربيرغ",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "马克·扎克伯格",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "pt"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "pl"
+    },
+    {
+      "type": "literal",
+      "value": "マーク・ザッカーバーグ",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://purl.org/dc/terms/subject": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Phillips_Exeter_Academy_alumni"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Directors_of_Facebook"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Harvard_University_people"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Giving_Pledgers"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Businesspeople_from_New_York"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_philanthropists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_technology_chief_executives"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Jewish_American_philanthropists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:People_from_Palo_Alto,_California"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_billionaires"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_computer_businesspeople"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_technology_company_founders"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Living_people"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Facebook_employees"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_Internet_celebrities"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Jewish_atheists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_atheists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:1984_births"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:21st-century_American_businesspeople"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:People_from_Dobbs_Ferry,_New_York"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Atheist_philanthropists"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:American_computer_programmers"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Alpha_Epsilon_Pi_brothers"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Businesspeople_from_the_San_Francisco_Bay_Area"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:People_from_White_Plains,_New_York"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/homepage": [
+    {
+      "type": "uri",
+      "value": "https://www.facebook.com/zuck"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/depiction": [
+    {
+      "type": "uri",
+      "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1.jpg"
+    }
+  ],
+  "http://purl.org/dc/elements/1.1/description": [
+    {
+      "type": "literal",
+      "value": "American computer entrepreneur",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "American computer entrepreneur"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/givenName": [
+    {
+      "type": "literal",
+      "value": "Mark Elliot",
+      "lang": "en"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/name": [
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Zuckerberg, Mark Elliot",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://www.w3.org/ns/prov#wasDerivedFrom": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Mark_Zuckerberg?oldid=606126364"
+    }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (ur. 14 maja 1984 w White Plains) – amerykański programista i przedsiębiorca, główny twórca serwisu społecznościowego Facebook, obecnie dyrektor generalny tego serwisu; Człowiek Roku tygodnika Time w 2010.W marcu 2008 roku Zuckerberg, plasując się na 785. miejscu rankingu „Forbesa” zestawiającego najbogatszych ludzi świata, został najmłodszym miliarderem świata (1,5 mld USD).W 2011 roku znalazł się na 15. miejscu rankingu „Forbesa” zestawiającego najbogatszych Amerykanów.",
+      "lang": "pl"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, 14 maggio 1984) è un informatico e imprenditore statunitense, fondatore di Facebook.Nel 2008 la rivista statunitense Forbes lo ha nominato \"Il più giovane miliardario al mondo\". Ha un patrimonio di 27 miliardi di dollari.Negli ultimi anni Zuckerberg ha acquistato molte società, tra cui Instagram e, recentemente, l'app di messaggistica WhatsApp.",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (born May 14, 1984) is an American computer programmer, Internet entrepreneur, and philanthropist. He is best known as one of five co-founders of the social networking website Facebook. As of April 2013, Zuckerberg is the chairman and chief executive of Facebook, Inc. and his personal wealth, as of April 2014, is estimated to be $25.3 billion.",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "マーク・ザッカーバーグ（マーク・エリオット・ザッカーバーグ、Mark Elliot Zuckerberg、1984年5月14日 - ）は、アメリカ合衆国のプログラマであり、実業家である。ハーバード大学在籍中にソーシャル・ネットワーキング・サービスサイト、「Facebook」を開設した。開設に際しては、同大学計算機科学部生のアンドリュー・マッコラム、ルームメイトだったダスティン・モスコヴィッツやクリス・ヒューズなど、他のハーバード大学の学生が協力した。現在、ザッカーバーグはFacebookのCEOに就いている。2010年のTime誌「Person Of The Year」に選ばれた。",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Марк Э́ллиот Цукербе́рг (англ. Mark Elliot Zuckerberg, [zʌkə'bə:ɡ]; 14 мая 1984 года, Уайт-Плейнс, штат Нью-Йорк, США) — американский программист и предприниматель в области интернет-технологий, долларовый миллиардер, один из разработчиков и основателей социальной сети Facebook. Руководитель компании Facebook Inc.",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, Estados Unidos, 14 de mayo de 1984), es un programador y empresario estadounidense conocido por ser el creador de Facebook. Para desarrollar la red, Zuckerberg contó con el apoyo de sus compañeros de Harvard, el coordinador de ciencias de la computación y sus compañeros de habitación Eduardo Saverin, Dustin Moskovitz, y Chris Hughes.",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains (New York), 14 mei 1984) is een Amerikaanse computerprogrammeur, ondernemer en multimiljardair.",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (* 14. Mai 1984 in White Plains, New York) ist ein US-amerikanischer Unternehmer. Er ist Gründer und Vorstandsvorsitzender des Unternehmens Facebook Inc. und hält an diesem einen Anteil von 28 Prozent.",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, 14 de maio de 1984) é um programador, empresário norte-americano, que ficou conhecido mundialmente por ser um dos fundadores do Facebook, a maior rede social do mundo e ainda por desenvolver o software DamnVid. Zuckerberg fundou o Facebook em 2004, junto com Dustin Moskovitz, Eduardo Saverin e Chris Hughes, quando eram estudantes da Universidade Harvard.",
+      "lang": "pt"
+    },
+    {
+      "type": "literal",
+      "value": "مارك زوكربيرج، (مواليد 14 مايو 1984) رجل أعمال ومبرمج أميركي. أشتهر بأنشاءه موقع الفيس بوك الاجتماعي، وهو موقع شعبي في جميع أنحاء العالم، أنشأ الموقع مع زملائه في قسم علوم الحاسب موسكوفيتش دستين وكريس هيوز وهو في جامعة هارفارد. وهو بمثابة الرئيس التنفيذي لموقع الفيسبوك.",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "馬克·艾略特·扎克伯格（英语：Mark Elliot Zuckerberg，1984年5月14日－）出生於美國紐約州白原市，是知名的社交網站Facebook的創始人、董事长兼首席执行官，同时也是一名软件设计师。Facebook是由他和哈佛大學的同學達斯汀·莫斯科維茲、爱德华多·萨维林、克里斯·休斯于2004年共同創立。2010年12月，扎克伯格被《時代雜誌》评选為「2010年年度風雲人物」。截止到2011年，他的个人资产估计为135亿美元。",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg, né le 14 mai 1984 à White Plains (État de New York), est un informaticien et chef d'entreprise américain. Il est le fondateur du site internet de réseautage social Facebook, dont il est le président-directeur général. Facebook a été créé en 2004 par Zuckerberg et ses camarades étudiants de l'université Harvard, Eduardo Saverin, Dustin Moskovitz et Chris Hughes.",
+      "lang": "fr"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/surname": [
+    {
+      "type": "literal",
+      "value": "Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/gnd": [
+    {
+      "type": "literal",
+      "value": 139618171,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/ontology/individualisedGnd": [
+    {
+      "type": "literal",
+      "value": "139618171"
+    }
+  ],
+  "http://dbpedia.org/property/spouse": [
+    {
+      "type": "literal",
+      "value": "Priscilla Chan",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/birthName": [
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Mark_Zuckerberg"
+    }
+  ],
+  "http://dbpedia.org/property/hasPhotoCollection": [
+    {
+      "type": "uri",
+      "value": "http://wifo5-03.informatik.uni-mannheim.de/flickrwrappr/photos/Mark_Zuckerberg"
+    }
+  ],
+  "http://dbpedia.org/property/caption": [
+    {
+      "type": "literal",
+      "value": "Zuckerberg at the 37th G8 summit in 2011.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/name": [
+    {
+      "type": "literal",
+      "value": "Mark Zuckerberg",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Zuckerberg, Mark Elliot",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/thumbnail": [
+    {
+      "type": "uri",
+      "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1.jpg?width=300"
+    }
+  ],
+  "http://dbpedia.org/ontology/abstract": [
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, Estados Unidos, 14 de mayo de 1984), es un programador y empresario estadounidense conocido por ser el creador de Facebook. Para desarrollar la red, Zuckerberg contó con el apoyo de sus compañeros de Harvard, el coordinador de ciencias de la computación y sus compañeros de habitación Eduardo Saverin, Dustin Moskovitz, y Chris Hughes. Actualmente es el personaje más joven que aparece en la lista anual de milmillonarios de la revista Forbes, con una fortuna valorada en 19.000 millones de dólares. Fue nombrado como Persona del Año en 2010 por la publicación estadounidense Time Magazine.",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "マーク・ザッカーバーグ（マーク・エリオット・ザッカーバーグ、Mark Elliot Zuckerberg、1984年5月14日 - ）は、アメリカ合衆国のプログラマであり、実業家である。ハーバード大学在籍中にソーシャル・ネットワーキング・サービスサイト、「Facebook」を開設した。開設に際しては、同大学計算機科学部生のアンドリュー・マッコラム、ルームメイトだったダスティン・モスコヴィッツやクリス・ヒューズなど、他のハーバード大学の学生が協力した。現在、ザッカーバーグはFacebookのCEOに就いている。2010年のTime誌「Person Of The Year」に選ばれた。",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (ur. 14 maja 1984 w White Plains) – amerykański programista i przedsiębiorca, główny twórca serwisu społecznościowego Facebook, obecnie dyrektor generalny tego serwisu; Człowiek Roku tygodnika Time w 2010.W marcu 2008 roku Zuckerberg, plasując się na 785. miejscu rankingu „Forbesa” zestawiającego najbogatszych ludzi świata, został najmłodszym miliarderem świata (1,5 mld USD).W 2011 roku znalazł się na 15. miejscu rankingu „Forbesa” zestawiającego najbogatszych Amerykanów. Został również uznany trzecim, po Larym Ellisonie i Billu Gatesie człowiekiem w Dolinie Krzemowej. 19 maja 2012 pojął za żonę Priscillę Chan.",
+      "lang": "pl"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, 14 de maio de 1984) é um programador, empresário norte-americano, que ficou conhecido mundialmente por ser um dos fundadores do Facebook, a maior rede social do mundo e ainda por desenvolver o software DamnVid. Zuckerberg fundou o Facebook em 2004, junto com Dustin Moskovitz, Eduardo Saverin e Chris Hughes, quando eram estudantes da Universidade Harvard. No ano de 2010, Zuckerberg foi nomeado pela revista Time como a Pessoa do Ano.Em março de 2011, a revista Forbes colocou Zuckerberg na 36ª posição da lista das pessoas mais ricas do mundo, com uma fortuna estimada em 17.5 bilhões de dólares.",
+      "lang": "pt"
+    },
+    {
+      "type": "literal",
+      "value": "Марк Э́ллиот Цукербе́рг (англ. Mark Elliot Zuckerberg, [zʌkə'bə:ɡ]; 14 мая 1984 года, Уайт-Плейнс, штат Нью-Йорк, США) — американский программист и предприниматель в области интернет-технологий, долларовый миллиардер, один из разработчиков и основателей социальной сети Facebook. Руководитель компании Facebook Inc.",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains, 14 maggio 1984) è un informatico e imprenditore statunitense, fondatore di Facebook.Nel 2008 la rivista statunitense Forbes lo ha nominato \"Il più giovane miliardario al mondo\". Ha un patrimonio di 27 miliardi di dollari.Negli ultimi anni Zuckerberg ha acquistato molte società, tra cui Instagram e, recentemente, l'app di messaggistica WhatsApp.",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "馬克·艾略特·扎克伯格（英语：Mark Elliot Zuckerberg，1984年5月14日－）出生於美國紐約州白原市，是知名的社交網站Facebook的創始人、董事长兼首席执行官，同时也是一名软件设计师。Facebook是由他和哈佛大學的同學達斯汀·莫斯科維茲、爱德华多·萨维林、克里斯·休斯于2004年共同創立。2010年12月，扎克伯格被《時代雜誌》评选為「2010年年度風雲人物」。截止到2011年，他的个人资产估计为135亿美元。",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg, né le 14 mai 1984 à White Plains (État de New York), est un informaticien et chef d'entreprise américain. Il est le fondateur du site internet de réseautage social Facebook, dont il est le président-directeur général. Facebook a été créé en 2004 par Zuckerberg et ses camarades étudiants de l'université Harvard, Eduardo Saverin, Dustin Moskovitz et Chris Hughes. En 2010, Mark Zuckerberg a été désigné « Personnalité de l'année » par le magazine Time' et personnalité la plus influente du monde suivi de Steve Jobs. Il est le plus jeune milliardaire du monde, sa fortune personnelle est estimée en 2014 à 30 milliards de dollars.",
+      "lang": "fr"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (* 14. Mai 1984 in White Plains, New York) ist ein US-amerikanischer Unternehmer. Er ist Gründer und Vorstandsvorsitzender des Unternehmens Facebook Inc. und hält an diesem einen Anteil von 28 Prozent.",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (White Plains (New York), 14 mei 1984) is een Amerikaanse computerprogrammeur, ondernemer en multimiljardair.",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "مارك زوكربيرج، (مواليد 14 مايو 1984) رجل أعمال ومبرمج أميركي. أشتهر بأنشاءه موقع الفيس بوك الاجتماعي، وهو موقع شعبي في جميع أنحاء العالم، أنشأ الموقع مع زملائه في قسم علوم الحاسب موسكوفيتش دستين وكريس هيوز وهو في جامعة هارفارد. وهو بمثابة الرئيس التنفيذي لموقع الفيسبوك.",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg (born May 14, 1984) is an American computer programmer, Internet entrepreneur, and philanthropist. He is best known as one of five co-founders of the social networking website Facebook. As of April 2013, Zuckerberg is the chairman and chief executive of Facebook, Inc. and his personal wealth, as of April 2014, is estimated to be $25.3 billion. Mark Zuckerberg receives a one-dollar salary as CEO of Facebook.Together with his college roommates and fellow Harvard University students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes, Zuckerberg launched Facebook from Harvard's dormitory rooms. The group then introduced Facebook onto other campuses nationwide and moved to Palo Alto, California shortly afterwards. In 2007, at the age of 23, Zuckerberg became a billionaire as a result of Facebook's success. The number of Facebook users worldwide reached a total of one billion in 2012. Zuckerberg was involved in various legal disputes that were initiated by others in the group, who claimed a share of the company based upon their involvement during the development phase of Facebook.Since 2010, Time magazine has named Zuckerberg among the 100 wealthiest and most influential people in the world as a part of its Person of the Year distinction. In 2011, Zuckerberg ranked first on the list of the \"Most Influential Jews in the World\" by The Jerusalem Post and has since consistently topped the list every year as of 2013. Zuckerberg was played by actor Jesse Eisenberg in the 2010 film The Social Network, in which the rise of Facebook is portrayed.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageID": [
+    {
+      "type": "literal",
+      "value": 2844938,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageRevisionID": [
+    {
+      "type": "literal",
+      "value": 606126364,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/birthDate": [
+    {
+      "type": "literal",
+      "value": "1984-05-14+02:00",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date"
+    }
+  ],
+  "http://dbpedia.org/property/birthPlace": [
+    {
+      "type": "literal",
+      "value": "White Plains, New York, U.S.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/dateOfBirth": [
+    {
+      "type": "literal",
+      "value": "1984-05-14+02:00",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date"
+    }
+  ],
+  "http://dbpedia.org/property/knownFor": [
+    {
+      "type": "literal",
+      "value": "Co-founding Facebook in 2004;",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "world's 2nd youngest self-made billionaire",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/placeOfBirth": [
+    {
+      "type": "literal",
+      "value": "White Plains, New York, United States",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/shortDescription": [
+    {
+      "type": "literal",
+      "value": "American computer entrepreneur",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/award": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Time_Person_of_the_Year"
+    }
+  ],
+  "http://dbpedia.org/ontology/birthDate": [
+    {
+      "type": "literal",
+      "value": "1984-05-14+02:00",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date"
+    }
+  ],
+  "http://dbpedia.org/ontology/birthPlace": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/White_Plains,_New_York"
+    }
+  ],
+  "http://dbpedia.org/ontology/birthYear": [
+    {
+      "type": "literal",
+      "value": "1984+02:00",
+      "datatype": "http://www.w3.org/2001/XMLSchema#gYear"
+    }
+  ],
+  "http://dbpedia.org/ontology/viafId": [
+    {
+      "type": "literal",
+      "value": "101338851"
+    }
+  ],
+  "http://dbpedia.org/property/almaMater": [
+    {
+      "type": "literal",
+      "value": "Harvard University",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/residence": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Palo_Alto,_California"
+    }
+  ],
+  "http://dbpedia.org/property/residence": [
+    {
+      "type": "literal",
+      "value": "Palo Alto, California, U.S.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/awards": [
+    {
+      "type": "literal",
+      "value": "Time Person of the Year 2010",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/homeTown": [
+    {
+      "type": "literal",
+      "value": "Dobbs Ferry, New York, U.S.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/occupation": [
+    {
+      "type": "literal",
+      "value": "Chairman & CEO of Facebook, Inc.",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/parents": [
+    {
+      "type": "literal",
+      "value": "Karen Kempner",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Edward Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/relatives": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Randi_Zuckerberg"
+    }
+  ],
+  "http://dbpedia.org/property/yearsActive": [
+    {
+      "type": "literal",
+      "value": 2004,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/ontology/activeYearsStartYear": [
+    {
+      "type": "literal",
+      "value": "2004+02:00",
+      "datatype": "http://www.w3.org/2001/XMLSchema#gYear"
+    }
+  ],
+  "http://dbpedia.org/ontology/hometown": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Dobbs_Ferry,_New_York"
+    }
+  ],
+  "http://dbpedia.org/ontology/occupation": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Mark_Zuckerberg__1"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Facebook"
+    }
+  ],
+  "http://dbpedia.org/ontology/almaMater": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Harvard_University"
+    }
+  ],
+  "http://dbpedia.org/ontology/relative": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Randi_Zuckerberg"
+    }
+  ],
+  "http://dbpedia.org/property/birthName": [
+    {
+      "type": "literal",
+      "value": "Mark Elliot Zuckerberg",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/salary": [
+    {
+      "type": "literal",
+      "value": "1.0",
+      "datatype": "http://dbpedia.org/datatype/usDollar"
+    }
+  ],
+  "http://dbpedia.org/property/website": [
+    {
+      "type": "uri",
+      "value": "https://www.facebook.com/zuck"
+    }
+  ],
+  "http://dbpedia.org/property/religion": [
+    {
+      "type": "literal",
+      "value": "None",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/networth": [
+    {
+      "type": "literal",
+      "value": "US $25.3 billion",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/networth": [
+    {
+      "type": "literal",
+      "value": "2.53E10",
+      "datatype": "http://dbpedia.org/datatype/usDollar"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageExternalLink": [
+    {
+      "type": "uri",
+      "value": "http://zuckerbergfiles.org"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.forbes.com/profile/mark-zuckerberg/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.time.com/time/video/player/0,32068,711047870001_2037225,00.html"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.cbsnews.com/video/watch/?id=7120522n&tag=contentBody;housing"
+    },
+    {
+      "type": "uri",
+      "value": "https://www.facebook.com/zuck"
+    }
+  ],
+  "http://dbpedia.org/ontology/lccnId": [
+    {
+      "type": "literal",
+      "value": "n2009022154"
+    }
+  ],
+  "http://dbpedia.org/property/lccn": [
+    {
+      "type": "literal",
+      "value": "n2009022154",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/viaf": [
+    {
+      "type": "literal",
+      "value": 101338851,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/education": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Phillips_Exeter_Academy"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Ardsley_High_School"
+    }
+  ],
+  "http://dbpedia.org/ontology/education": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Phillips_Exeter_Academy"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Ardsley_High_School"
+    }
+  ],
+  "http://dbpedia.org/property/salary": [
+    {
+      "type": "literal",
+      "value": "US $1",
+      "lang": "en"
+    }
+  ]
+}
