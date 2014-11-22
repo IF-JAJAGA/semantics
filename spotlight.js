@@ -12,110 +12,215 @@ var
   _ = require('underscore'),
   async = require('async'),
 
-  result = {}, // Contains the result graph (all RDF triples)
+  cache = {},
 
-  annotate,
-  handleResources;
+  getGraphFromText,
+  getDbpediaGraph,
+  getText,
+  getGraph,
+
+  cacheGraphs = {},
+  cacheSubGraphs = {};
 
 /**
  * @callback doneCallback
  * @param {*} [err] - Information about the error (evaluates to false if OK)
- * @param {object} graph - The result graph of all detected entities
+ * @param {object} result - The result of the function
  */
 
 /**
  * @param {object} options - The options (with at least the text)
- * @param userOption.text {string!} - The text to annotate
- * @param userOption.confidence {number=0.2}
+ * @param {Array string} userOption.pages - The URIs to dereference and annotate
+ * @param {number=0.2} userOption.confidence
  *   - Percentage of confidence required to allow result
- * @param userOption.support {number=20}
+ * @param {number=20} userOption.support
  *   - Number of wikipedia link referencing a result
- * @param userOption.live {boolean=false}
+ * @param {boolean=false} userOption.live
  *   - Whether to ask to live.dbpedia instead of dbpedia
+ * @param {string=e37637f70668dafc97c8704df499c28826bb65cb} userOptions.apikey
+ *   - Key to use to analyze URI (get text)
  * @param {doneCallback} done - Gives the result (or err if something was wrong)
  */
-module.exports.annotate = function(userOptions, done) {
-  var reqOptions;
+module.exports.getGraph = getGraph = function(userOptions, done) {
+  var results = {};
 
   userOptions = _.extend({
     confidence: 0.2,
     support: 20,
-    live: false
+    live: false,
+    apikey: 'e37637f70668dafc97c8704df499c28826bb65cb'
   }, userOptions);
 
-  reqOptions = {
-    confidence: userOptions.confidence,
-    support: userOptions.support,
-    text: userOptions.text
+  async.each(userOptions.pages, function(pageUri, nextUri) {
+    if (cacheGraphs.hasOwnProperty(pageUri) && cacheGraphs[pageUri]) {
+      results[pageUri] = cacheGraphs[pageUri];
+      return nextUri();
+    }
+
+    getText(pageUri, userOptions.apikey, function(err, text) {
+
+      getGraphFromText(userOptions, text, function(err, graph) {
+        if (err) {
+          debug('Error for page ' + pageUri);
+          debug(err.stack);
+        }
+        results[pageUri] = graph;
+        nextUri();
+      });
+
+    })
+  }, function(err) {
+    if (err) return done(err);
+
+    done(null, results);
+  });
+};
+
+/**
+ * Finds the text to analyze from a URI
+ * @param {string} uri - URI to dereference
+ * @param {doneCallback} next - Gives the text (or err if something was wrong)
+ */
+module.exports.getText = getText = function(uri, apikey, next) {
+  var options = {
+    url: 'http://access.alchemyapi.com/calls/url/URLGetText',
+    method: 'GET',
+    qs: {
+      url: uri,
+      apikey: apikey,
+      outputMode: 'json'
+    }
   };
 
+  debug(options);
+
+  request(options, function(err, res, body) {
+    var result;
+    try {
+      parsed = JSON.parse(body);
+    } catch (e) {
+      err = e;
+    }
+    if (err) return next(new Error(err));
+
+    return next(null, parsed.text);
+  });
+};
+
+module.exports.getGraphFromText = getGraphFromText
+    = function(userOptions, text, cbResult) {
   // DBPedia Spotlight request options
-  options = {
+  var options = {
     url: 'http://spotlight.dbpedia.org/rest/annotate',
     method: 'POST',
     headers: {
       'Accept': 'application/json'
     },
-    body: querystring.stringify(reqOptions)
+    form: {
+      text: text,
+      confidence: userOptions.confidence,
+      support: userOptions.support
+    }
   };
+
   request(options, function(err, res, body) {
-    var resources;
+    var resources,
+      key,
+      i,
+      entityUri,
+      entitiesUris = [];
+
+    if (err) return cbResult(new Error(err));
     debug('Got response for ' + options.url);
+
     try {
       resources = JSON.parse(body).Resources;
     } catch (e) {
-      debug(body);
-      err = e;
+      return cbResult(e);
     }
-    if (err) return done(new Error(err));
-    handleResources(JSON.parse(body).Resources, done);
+    if (undefined === resources) {
+      debug('Nothing was found for ' + options.url);
+
+      return cbResult(new Error('Unable to parse response of ' + options.url));
+    }
+
+    for (i = 0; entityUri = resources[i] && resources[i]['@URI']; ++i) {
+      if (!cacheSubGraphs.hasOwnProperty(entityUri)) {
+        entitiesUris.push(entityUri);
+        cacheSubGraphs[entityUri] = false;
+      }
+    }
+
+    getDbpediaGraph(userOptions.live, entitiesUris, function(err, graph) {
+      if (err) return cbResult(err);
+
+      return cbResult(null, graph);
+    });
   });
-};
+}
 
 /**
  * Finds all neighbors in the DBPedia RDF graph for a list of URI from dbpedia
- * @param {Array} resources - List of URI (as strings)
- * @param {doneCallback} done - Gives the result (or err if something was wrong)
+ * @param {boolean} live - Whether to add the live prefix for DBPedia
+ * @param {Array} entitiesUris - List of DBPedia URIs (as strings)
+ * @param {doneCallback} cbResult - Gives the result (or err if an error occurs)
  */
-handleResources = function(resources, done) {
-  var result = {};
+module.exports.getDbpediaGraph = getDbpediaGraph
+    = function(live, entitiesUris, cbResult) {
+  var graph = {};
 
-  async.each(resources, function(resource, next) {
-    var resourceUri = resource['@URI'],
-      escapedUri = resourceUri;
-    // Change to live if response time is too slow
-    escapedUri = escapedUri.replace(/^http:\/\/dbpedia/,
-        'http://live.dbpedia');
+  async.each(entitiesUris, function(entityUri, nextEntity) {
+    var escapedUri = entityUri;
+
+    // Change to live can help if dbpedia is in maintenance
+    if (live) {
+      escapedUri = escapedUri.replace(/^http:\/\/dbpedia/,
+          'http://live.dbpedia');
+    }
     escapedUri = querystring.escape(escapedUri);
-    debug(resourceUri);
+
+    debug(entityUri);
+
+    if (cacheSubGraphs.hasOwnProperty(entityUri) && cacheSubGraphs[entityUri]) {
+      // WARNING: it is impossible for 2 graphs (in this case) to have the same
+      // subject, so we can safely merge them simply by adding all subject keys
+      for (key in cacheSubGraphs[entityUri]) {
+        graph[key] = cacheSubGraphs[entityUri][key];
+      }
+      if (!_.isEmpty(cacheSubGraphs[entityUri])) {
+        debug('Cached value: ' + entityUri);
+      }
+      return nextEntity();
+    }
 
     // Getting all neighbors of the resource URI
     request('http://rdf-translator.appspot.com/convert/detect/rdf-json/' +
-        resourceUri, function(err, res, body) {
-      if (err) return next(new Error(err));
+        escapedUri, function(err, res, body) {
+      if (err) return nextEntity(new Error(err));
       var
-        graph = {},
+        subGraph = {},
         key;
 
       try {
-        graph = JSON.parse(body);
-      } catch (err) {
-        debug('No information for: ' + resourceUri);
+        subGraph = JSON.parse(body);
+        cacheSubGraphs[entityUri] = subGraph;
+      } catch (e) {
+        debug('No information for: ' + entityUri);
       }
 
       // WARNING: it is impossible for 2 graphs (in this case) to have the same
       // subject, so we can safely merge them simply by adding all subject keys
-      for (key in graph) {
-        result[key] = graph[key];
+      for (key in subGraph) {
+        graph[key] = subGraph[key];
       }
-      if (!_.isEmpty(graph)) {
-        debug('done processing: ' + resourceUri);
+      if (!_.isEmpty(subGraph)) {
+        debug('Done processing: ' + entityUri);
       }
-      next();
+      return nextEntity();
     });
   }, function(err) {
-    if (err) return done(new Error(err));
+    if (err) return cbResult(err);
 
-    done(null, result);
+    return cbResult(null, graph);
   });
-}
+};

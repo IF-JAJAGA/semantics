@@ -1,9 +1,24 @@
-var spotlight = require('./spotlight');
+var spotlight = require('./spotlight'),
+  toSpotlight = require('./testToSpotlight'),
+  request = require('request'),
+  debug = require('debug')('example'),
 
-spotlight.annotate({
-  text: 'Contient au moins un petit peu s\'il te plaît!'
-}, function(err, graph) {
+  i,
+  uri;
+
+spotlight.getGraph({
+  pages: toSpotlight.pages,
+  live: true,
+  confidence: 0.3,
+  support: 20
+}, function(err, graphs) {
   if (err) throw err;
 
-  console.dir(graph);
+  delete toSpotlight.pages;
+  for (var key in graphs) {
+    debug(key);
+    toSpotlight.results = graphs;
+  }
+  debugger;
+  console.log(JSON.stringify(toSpotlight));
 });
