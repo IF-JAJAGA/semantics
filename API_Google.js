@@ -19,15 +19,17 @@ google.build(function(api){
 			return;
 		}
 		
-		var uri_tab = [];
+		var uri_tab = [], result_graph;
 		for(var i in result.items){
 			uri_tab.push(result.items[i].link);
 		}
-		handleResources(uri_tab, function(err, result){
-			console.log(result);
+		handleResources(uri_tab, function(err, result_g){
+			console.log(JSON.stringify(result_g,undefined,4));
+			result_graph = result_g;
 		});
 		var json_final = JSON.stringify({request: result.queries.request[0].searchTerms,/*TODO Ajouter au milieu les résultats pour lesquels on obtient un graphe*/
-							pages: uri_tab}, undefined, 2);
+							//results : result_graph,	//NOT WORKING
+							pages: uri_tab}, undefined, 4);
 							
 		//console.log(json_final);
 	})
@@ -47,14 +49,14 @@ handleResources = function(resources, done) {
 				resource, 
 				function(err, res, body) {
 					if (err) return next(new Error(err));
-					var graph = {}, key;
+					var graph , key;
 					
 					try {
 						graph = JSON.parse(body);
 					} catch (err) {
-						//console.log('No information for: ' + resource);
 					}
-					console.log(graph);
+					if(graph != undefined){
+						//console.log(JSON.stringify(graph, undefined, 2));
 					// WARNING: it is impossible for 2 graphs (in this case) to have the same
 					// subject, so we can safely merge them simply by adding all subject keys
 					
@@ -64,6 +66,7 @@ handleResources = function(resources, done) {
 						if (!_.isEmpty(graph)) {
 							debug('done processing: ' + resource);
 						}
+					}
 						next();
 					
 				}
