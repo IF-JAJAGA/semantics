@@ -5,9 +5,8 @@
 var
   // App
   app = require('../app'),
-
-  // Database
-  redis = app.get('redis client'),
+  searchEngines = require('../search-engines'),
+  spotlight = require('../spotlight'),
 
   // Router
   express = require('express'),
@@ -15,15 +14,12 @@ var
 
   // Helper
   debug = require('debug')('search'),
-  async = require('async'),
   _ = require('underscore'),
-
-  // Node api
-  crypto = require('crypto'),
 
   entityTypes = {
     PERSON: 'PERSON'
   },
+
   makeEntity,
   makePerson,
   getLocalizedProperty;
@@ -34,7 +30,7 @@ getLocalizedProperty = function(properties, lang) {
   });
 };
 
-makeEntity = function(object,lang) {
+makeEntity = function(object, lang) {
   lang = lang || 'en';
   var entity = {
     wikiUrl: object['http://xmlns.com/foaf/0.1/isPrimaryTopicOf'][0].value,
@@ -47,7 +43,7 @@ makeEntity = function(object,lang) {
   return entity;
 };
 
-makePerson = function(object,lang) {
+makePerson = function(object, lang) {
   lang = lang || 'en';
   var entity = {
     type: entityTypes.PERSON,
@@ -56,27 +52,52 @@ makePerson = function(object,lang) {
   return entity;
 };
 
-router.get('/', function(req,res,next) {
+router.get('/', function(req, res, next) {
   var params = req.query,
-      entities = [];
+      entities = [],
+      key;
   debug('requête : ' + params.q);
 
-  if(params.q == 'mark') {
-    // Test d'affichage d'une personne
-    var mark = require('../mark.json'),
-        lang = 'fr',
-        entity = _.extend({},makeEntity(mark,lang),makePerson(mark,lang));
-    entities.push(entity);
-  }
+  searchEngines.search(params.q, function(err, pages) {
+    var mark,
+      lang = 'fr',
+      entity;
 
-  if (req.accepts('text/html')) {
-    res.render('search', {title: 'Résultats de la requête', inputValue: params.q, entities: entities});
-  } else if (req.accepts('json')) {
-    res.set('Content-Type', 'application/json');
-    res.status('200').send(JSON.stringify({q: params.q, entities: entities}));
-  } else {
-    res.status('406').send('Not Acceptable');
-  }
+    if (err) return next(new Error(err));
+
+    debug('got table: ' + JSON.stringify(pages));
+    pages = ['http://en.wikipedia.com/wiki/Mark_Zuckerberg'];
+
+    if (params.q == 'mark') {
+      // Test d'affichage d'une personne
+      mark = require('../mark.json');
+      lang = 'fr';
+      entity = _.extend({}, makeEntity(mark,lang), makePerson(mark,lang));
+      entities.push(entity);
+      res.render('search', {title: 'Résultats de la requête', inputValue: params.q, entities: entities});
+      return;
+    }
+
+    spotlight.getGraph({pages: pages, live: true}, function(err, graphs){
+      for (url in graphs) {
+        for (key in graphs[url]) {
+          debug('found for ' + key);
+          entity = _.extend({}, makeEntity(graphs[key], lang), makePerson(graphs[key],lang));
+          entities.push(entity);
+
+          if (req.accepts('text/html')) {
+            res.render('search', {title: 'Résultats de la requête', inputValue: params.q, entities: entities});
+          } else if (req.accepts('json')) {
+            res.set('Content-Type', 'application/json');
+            res.status(200).send(JSON.stringify({q: params.q, entities: entities}));
+          } else {
+            res.status(406).send('Not Acceptable');
+          }
+        }
+        break;
+      }
+    });
+  });
 });
 
 module.exports = router;

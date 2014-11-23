@@ -1,0 +1,93 @@
+var API_KEY = 'AIzaSyAsKc9-6FZUvpKPPq39dYUHcHIPUPy6fKU';
+
+var request = require('request'),
+  async = require('async'),
+  _ = require('underscore'),
+  debug = require('debug')('search-engines'),
+
+  google = require('node-google-api')({
+    apiKey: API_KEY,
+    debugMode: true // Throws errors instead of passing them silently.
+  }),
+
+  // Functions
+  search,
+  handleResources,
+
+  CX = '016583123162265953650:aiks_s3sch8';
+
+module.exports.search = search = function(query, done) {
+  google.build(function(api) {
+    api.customsearch.cse.list({cx: CX, q: query, auth: API_KEY}, function(result) {
+      var uri_tab = [],
+        i,
+        item,
+        json_final;
+
+      if(result.error){
+        debug('An error occured', result);
+        return done(result);
+      }
+
+      for(i = 0; item = result.items[i]; ++i) {
+        uri_tab.push(item.link);
+      }
+
+
+      return done(null, uri_tab);
+
+      //TODO Ajouter au milieu les résultats pour lesquels on obtient un graphe
+
+      handleResources(uri_tab, function(err, result) {
+        //console.log(result);
+      });
+      json_final = JSON.stringify({request: result.queries.request[0].searchTerms,/*TODO ici*/
+          pages: uri_tab}, undefined, 2);
+
+        //console.log(json_final);
+    });
+  });
+}
+
+/**
+* Finds all neighbors in the DBPedia RDF graph for a list of URI from dbpedia
+* @param {Array} resources - List of URI (as strings)
+* @param {doneCallback} done - Gives the result (or err if something was wrong)
+*/
+handleResources = function(resources, done) {
+  var result = {};
+  async.each(resources,
+    function(resource, next) {
+      // Getting all neighbors of the resource URI
+      request('http://rdf-translator.appspot.com/convert/detect/rdf-json/' +
+      resource,
+      function(err, res, body) {
+        if (err) return next(new Error(err));
+        var graph = {}, key;
+
+        try {
+          graph = JSON.parse(body);
+        } catch (err) {
+          //console.log('No information for: ' + resource);
+        }
+        console.log(graph);
+        // WARNING: it is impossible for 2 graphs (in this case) to have the same
+        // subject, so we can safely merge them simply by adding all subject keys
+
+        for (key in graph) {
+          result[key] = graph[key];
+        }
+        if (!_.isEmpty(graph)) {
+          //debug('done processing: ' + resource);
+        }
+        next();
+
+      }
+    );
+  },
+  function(err) {
+    if (err) return done(new Error(err));
+
+    done(null, result);
+  });
+}
