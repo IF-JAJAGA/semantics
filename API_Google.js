@@ -26,8 +26,8 @@ google.build(function(api){
 		handleResources(uri_tab, function(err, result_g){
 			//console.log(JSON.stringify(result_g,undefined,4));
 			result_graph = result_g;
-			var json_final = JSON.stringify({request: result.queries.request[0].searchTerms,/*TODO Ajouter au milieu les résultats pour lesquels on obtient un graphe*/
-							results : result_graph,	//NOT WORKING
+			var json_final = JSON.stringify({request: result.queries.request[0].searchTerms,/*Ajout des résultats pour lesquels on obtient un graphe*/
+							results : result_graph,	
 							pages: uri_tab}, undefined, 4);
 							
 			console.log(json_final);
