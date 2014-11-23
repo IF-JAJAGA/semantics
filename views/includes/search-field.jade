@@ -1,5 +1,11 @@
-form(method='get', action='/search')
-  div.input-group
-    input.form-control(name='q',type='text',value=(inputValue||''))
-    span.input-group-btn
-      input.btn.btn-default(type='submit', value='Send')
+form.form-inline(method='get', action='/search')
+  .form-group
+    .input-group
+      label.sr-only(for='qInput')= 'Search field'
+      input.form-control(id='qInput',name='q',type='text',value=(inputValue||''),placeholder='test: mark potato')
+    - var langs = [{code:'en', label:'EN'},{code:'fr', label:'FR'},{code:'es', label:'ES'}];
+    label.sr-only(for='lSelector')= 'Lang Selector'
+    select.selectpicker(id='lSelector',name='l',data-size='3')
+      for lang in langs
+        option(value=lang.code, selected=(selectedLang && lang.code==selectedLang ? 'selected' : false))= lang.label
+  button.btn.btn-default(type='submit')= 'Send'

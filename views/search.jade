@@ -1,6 +1,6 @@
 extends layout
 
-mixin modal(id,title,text)
+mixin modal(id,title,text,url)
   .modal.fade(id=id, role='dialog', aria-labelledby=id+'Label')
     .modal-dialog
       .modal-content
@@ -10,20 +10,23 @@ mixin modal(id,title,text)
               | &times;
             span.sr-only
               | Close
-          h4.modal-title(id=id+'Label')= title
+          h4.modal-title(id=id+'Label')= title+' | '
+            a(href=url)= 'Wikipedia'
         .modal-body= text
 
 block content
   .row
     include ./includes/search-field.jade
   .row
-  each entity in entities
-    .col-sm-6.col-md-4
-      .entity.thumbnail
-        img.entity-img(src=entity.thumbnail, alt=entity.caption)
-        .caption
-          h3= entity.name
-          p= entity.abstractShort
-          button.btn.btn-primary(type='button', data-toggle='modal',data-target='#abstractModal')
-            | détails
-          +modal('abstractModal',entity.name,entity.abstract)
+    .entity-container
+      .tiling
+        ul.list
+          each entity,index in entities
+            li.tile.is-entity
+              .entity(data-toggle='modal',data-target='#entityModal'+index)
+                .entity-content
+                  h4= entity.label
+                  p= entity.description
+                .entity-img
+                    img.entity-img(src=entity.thumbnail, alt=entity.caption)
+              +modal('entityModal'+index,entity.label,entity.abstract,entity.wikiUrl)

@@ -1,0 +1,1434 @@
+{
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+    {
+      "type": "uri",
+      "value": "http://umbel.org/umbel/rc/BiologicalLivingObject"
+    },
+    {
+      "type": "uri",
+      "value": "http://umbel.org/umbel/rc/Plant"
+    },
+    {
+      "type": "uri",
+      "value": "http://umbel.org/umbel/rc/EukaryoticCell"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.w3.org/2002/07/owl#Thing"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/ontology/Species"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/ontology/Eukaryote"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/ontology/Plant"
+    }
+  ],
+  "http://www.w3.org/2002/07/owl#sameAs": [
+    {
+      "type": "uri",
+      "value": "http://tl.dbpedia.org/resource/Patatas"
+    },
+    {
+      "type": "uri",
+      "value": "http://ik.dbpedia.org/resource/Asiaġruaq"
+    },
+    {
+      "type": "uri",
+      "value": "http://ro.dbpedia.org/resource/Cartof"
+    },
+    {
+      "type": "uri",
+      "value": "http://als.dbpedia.org/resource/Kartoffel"
+    },
+    {
+      "type": "uri",
+      "value": "http://lbe.dbpedia.org/resource/Нущи"
+    },
+    {
+      "type": "uri",
+      "value": "http://hy.dbpedia.org/resource/Կարտոֆիլ"
+    },
+    {
+      "type": "uri",
+      "value": "http://bs.dbpedia.org/resource/Krompir"
+    },
+    {
+      "type": "uri",
+      "value": "http://diq.dbpedia.org/resource/Kartole"
+    },
+    {
+      "type": "uri",
+      "value": "http://wuu.dbpedia.org/resource/洋山芋"
+    },
+    {
+      "type": "uri",
+      "value": "http://pfl.dbpedia.org/resource/Grumbeere"
+    },
+    {
+      "type": "uri",
+      "value": "http://ksh.dbpedia.org/resource/Ääpel"
+    },
+    {
+      "type": "uri",
+      "value": "http://ka.dbpedia.org/resource/კარტოფილი"
+    },
+    {
+      "type": "uri",
+      "value": "http://frr.dbpedia.org/resource/Iartapel"
+    },
+    {
+      "type": "uri",
+      "value": "http://krc.dbpedia.org/resource/Гардош"
+    },
+    {
+      "type": "uri",
+      "value": "http://lod.geospecies.org/ses/9YcAF"
+    },
+    {
+      "type": "uri",
+      "value": "http://ks.dbpedia.org/resource/اولُو"
+    },
+    {
+      "type": "uri",
+      "value": "http://pcd.dbpedia.org/resource/Pétote"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh.dbpedia.org/resource/马铃薯"
+    },
+    {
+      "type": "uri",
+      "value": "http://el.dbpedia.org/resource/Πατάτα"
+    },
+    {
+      "type": "uri",
+      "value": "http://mk.dbpedia.org/resource/Компир"
+    },
+    {
+      "type": "uri",
+      "value": "http://lb.dbpedia.org/resource/Gromper"
+    },
+    {
+      "type": "uri",
+      "value": "http://sl.dbpedia.org/resource/Krompir"
+    },
+    {
+      "type": "uri",
+      "value": "http://cy.dbpedia.org/resource/Taten"
+    },
+    {
+      "type": "uri",
+      "value": "http://koi.dbpedia.org/resource/Картов"
+    },
+    {
+      "type": "uri",
+      "value": "http://rue.dbpedia.org/resource/Бандурка"
+    },
+    {
+      "type": "uri",
+      "value": "http://fr.dbpedia.org/resource/Pomme_de_terre"
+    },
+    {
+      "type": "uri",
+      "value": "http://sc.dbpedia.org/resource/Patata"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.org/entity/Q10998"
+    },
+    {
+      "type": "uri",
+      "value": "http://be.dbpedia.org/resource/Бульба"
+    },
+    {
+      "type": "uri",
+      "value": "http://csb.dbpedia.org/resource/Bùlwa"
+    },
+    {
+      "type": "uri",
+      "value": "http://zu.dbpedia.org/resource/Izambane"
+    },
+    {
+      "type": "uri",
+      "value": "http://pam.dbpedia.org/resource/Patatas"
+    },
+    {
+      "type": "uri",
+      "value": "http://be_x_old.dbpedia.org/resource/Бульба"
+    },
+    {
+      "type": "uri",
+      "value": "http://eo.dbpedia.org/resource/Terpomo"
+    },
+    {
+      "type": "uri",
+      "value": "http://co.dbpedia.org/resource/Pomu"
+    },
+    {
+      "type": "uri",
+      "value": "http://mrj.dbpedia.org/resource/Тури"
+    },
+    {
+      "type": "uri",
+      "value": "http://bat_smg.dbpedia.org/resource/Bolbė"
+    },
+    {
+      "type": "uri",
+      "value": "http://sah.dbpedia.org/resource/Хортуоппуй"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh_yue.dbpedia.org/resource/薯仔"
+    },
+    {
+      "type": "uri",
+      "value": "http://rn.dbpedia.org/resource/Ikiraya"
+    },
+    {
+      "type": "uri",
+      "value": "http://ang.dbpedia.org/resource/Eorþperu"
+    },
+    {
+      "type": "uri",
+      "value": "http://it.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://hu.dbpedia.org/resource/Burgonya"
+    },
+    {
+      "type": "uri",
+      "value": "http://tt.dbpedia.org/resource/Бәрәңге"
+    },
+    {
+      "type": "uri",
+      "value": "http://an.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://bn.dbpedia.org/resource/আলু"
+    },
+    {
+      "type": "uri",
+      "value": "http://nn.dbpedia.org/resource/Potet"
+    },
+    {
+      "type": "uri",
+      "value": "http://wikidata.dbpedia.org/resource/Q10998"
+    },
+    {
+      "type": "uri",
+      "value": "http://kn.dbpedia.org/resource/ಆಲೂಗಡ್ಡೆ"
+    },
+    {
+      "type": "uri",
+      "value": "http://su.dbpedia.org/resource/Kentang"
+    },
+    {
+      "type": "uri",
+      "value": "http://gv.dbpedia.org/resource/Praase"
+    },
+    {
+      "type": "uri",
+      "value": "http://uk.dbpedia.org/resource/Картопля"
+    },
+    {
+      "type": "uri",
+      "value": "http://se.dbpedia.org/resource/Buđeita"
+    },
+    {
+      "type": "uri",
+      "value": "http://lv.dbpedia.org/resource/Kartupelis"
+    },
+    {
+      "type": "uri",
+      "value": "http://hsb.dbpedia.org/resource/Běrna"
+    },
+    {
+      "type": "uri",
+      "value": "http://is.dbpedia.org/resource/Kartafla"
+    },
+    {
+      "type": "uri",
+      "value": "http://uz.dbpedia.org/resource/Kartoshka"
+    },
+    {
+      "type": "uri",
+      "value": "http://ca.dbpedia.org/resource/Patatera"
+    },
+    {
+      "type": "uri",
+      "value": "http://ru.dbpedia.org/resource/Картофель"
+    },
+    {
+      "type": "uri",
+      "value": "http://sco.dbpedia.org/resource/Tattie"
+    },
+    {
+      "type": "uri",
+      "value": "http://pt.dbpedia.org/resource/Batata"
+    },
+    {
+      "type": "uri",
+      "value": "http://sk.dbpedia.org/resource/Ľuľok_zemiakový"
+    },
+    {
+      "type": "uri",
+      "value": "http://bar.dbpedia.org/resource/Eadäpfe"
+    },
+    {
+      "type": "uri",
+      "value": "http://qu.dbpedia.org/resource/Papa"
+    },
+    {
+      "type": "uri",
+      "value": "http://gu.dbpedia.org/resource/બટાકાં"
+    },
+    {
+      "type": "uri",
+      "value": "http://br.dbpedia.org/resource/Patatez"
+    },
+    {
+      "type": "uri",
+      "value": "http://stq.dbpedia.org/resource/Tuffelke_(Solanum_tuberosum)"
+    },
+    {
+      "type": "uri",
+      "value": "http://ckb.dbpedia.org/resource/پەتاتە"
+    },
+    {
+      "type": "uri",
+      "value": "http://la.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://simple.dbpedia.org/resource/Potato"
+    },
+    {
+      "type": "uri",
+      "value": "http://nds.dbpedia.org/resource/Kantüffel"
+    },
+    {
+      "type": "uri",
+      "value": "http://eu.dbpedia.org/resource/Patata"
+    },
+    {
+      "type": "uri",
+      "value": "http://ba.dbpedia.org/resource/Бәрәңге"
+    },
+    {
+      "type": "uri",
+      "value": "http://mr.dbpedia.org/resource/बटाटा"
+    },
+    {
+      "type": "uri",
+      "value": "http://cs.dbpedia.org/resource/Lilek_brambor"
+    },
+    {
+      "type": "uri",
+      "value": "http://as.dbpedia.org/resource/আলু"
+    },
+    {
+      "type": "uri",
+      "value": "http://os.dbpedia.org/resource/Картоф"
+    },
+    {
+      "type": "uri",
+      "value": "http://ht.dbpedia.org/resource/Pòm_tè"
+    },
+    {
+      "type": "uri",
+      "value": "http://war.dbpedia.org/resource/Patatas"
+    },
+    {
+      "type": "uri",
+      "value": "http://gn.dbpedia.org/resource/Yvy'a"
+    },
+    {
+      "type": "uri",
+      "value": "http://yi.dbpedia.org/resource/קארטאפל"
+    },
+    {
+      "type": "uri",
+      "value": "http://rw.dbpedia.org/resource/Ikirayi"
+    },
+    {
+      "type": "uri",
+      "value": "http://te.dbpedia.org/resource/బంగాళదుంప"
+    },
+    {
+      "type": "uri",
+      "value": "http://sa.dbpedia.org/resource/आलुकम्"
+    },
+    {
+      "type": "uri",
+      "value": "http://ff.dbpedia.org/resource/Kudaku"
+    },
+    {
+      "type": "uri",
+      "value": "http://io.dbpedia.org/resource/Terpomo"
+    },
+    {
+      "type": "uri",
+      "value": "http://ms.dbpedia.org/resource/Kentang"
+    },
+    {
+      "type": "uri",
+      "value": "http://jv.dbpedia.org/resource/Kenthang"
+    },
+    {
+      "type": "uri",
+      "value": "http://gd.dbpedia.org/resource/Buntàta"
+    },
+    {
+      "type": "uri",
+      "value": "http://chy.dbpedia.org/resource/Aéstomemésêhestôtse"
+    },
+    {
+      "type": "uri",
+      "value": "http://bg.dbpedia.org/resource/Картоф"
+    },
+    {
+      "type": "uri",
+      "value": "http://vls.dbpedia.org/resource/Petat"
+    },
+    {
+      "type": "uri",
+      "value": "http://arz.dbpedia.org/resource/بطاطس"
+    },
+    {
+      "type": "uri",
+      "value": "http://ilo.dbpedia.org/resource/Patátas"
+    },
+    {
+      "type": "uri",
+      "value": "http://tr.dbpedia.org/resource/Patates"
+    },
+    {
+      "type": "uri",
+      "value": "http://ja.dbpedia.org/resource/ジャガイモ"
+    },
+    {
+      "type": "uri",
+      "value": "http://af.dbpedia.org/resource/Aartappel"
+    },
+    {
+      "type": "uri",
+      "value": "http://ceb.dbpedia.org/resource/Patatas"
+    },
+    {
+      "type": "uri",
+      "value": "http://es.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://gan.dbpedia.org/resource/土豆"
+    },
+    {
+      "type": "uri",
+      "value": "http://lt.dbpedia.org/resource/Valgomoji_bulvė"
+    },
+    {
+      "type": "uri",
+      "value": "http://nap.dbpedia.org/resource/Patana"
+    },
+    {
+      "type": "uri",
+      "value": "http://sv.dbpedia.org/resource/Potatis"
+    },
+    {
+      "type": "uri",
+      "value": "http://fi.dbpedia.org/resource/Peruna"
+    },
+    {
+      "type": "uri",
+      "value": "http://no.dbpedia.org/resource/Potet"
+    },
+    {
+      "type": "uri",
+      "value": "http://kv.dbpedia.org/resource/Картупель"
+    },
+    {
+      "type": "uri",
+      "value": "http://mn.dbpedia.org/resource/Төмс"
+    },
+    {
+      "type": "uri",
+      "value": "http://sq.dbpedia.org/resource/Patatja"
+    },
+    {
+      "type": "uri",
+      "value": "http://am.dbpedia.org/resource/ድንች"
+    },
+    {
+      "type": "uri",
+      "value": "http://id.dbpedia.org/resource/Kentang"
+    },
+    {
+      "type": "uri",
+      "value": "http://hr.dbpedia.org/resource/Krumpir"
+    },
+    {
+      "type": "uri",
+      "value": "http://pl.dbpedia.org/resource/Ziemniak"
+    },
+    {
+      "type": "uri",
+      "value": "http://zh_min_nan.dbpedia.org/resource/Má-lêng-chî"
+    },
+    {
+      "type": "uri",
+      "value": "http://fa.dbpedia.org/resource/سیب‌زمینی"
+    },
+    {
+      "type": "uri",
+      "value": "http://ko.dbpedia.org/resource/감자"
+    },
+    {
+      "type": "uri",
+      "value": "http://hi.dbpedia.org/resource/आलू"
+    },
+    {
+      "type": "uri",
+      "value": "http://wa.dbpedia.org/resource/Crompire"
+    },
+    {
+      "type": "uri",
+      "value": "http://nl.dbpedia.org/resource/Aardappel"
+    },
+    {
+      "type": "uri",
+      "value": "http://ab.dbpedia.org/resource/Акартош"
+    },
+    {
+      "type": "uri",
+      "value": "http://ta.dbpedia.org/resource/உருளைக்_கிழங்கு"
+    },
+    {
+      "type": "uri",
+      "value": "http://he.dbpedia.org/resource/תפוח_אדמה"
+    },
+    {
+      "type": "uri",
+      "value": "http://pnb.dbpedia.org/resource/آلو"
+    },
+    {
+      "type": "uri",
+      "value": "http://ga.dbpedia.org/resource/Práta"
+    },
+    {
+      "type": "uri",
+      "value": "http://gl.dbpedia.org/resource/Pataca"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Potato"
+    },
+    {
+      "type": "uri",
+      "value": "http://az.dbpedia.org/resource/Kartof"
+    },
+    {
+      "type": "uri",
+      "value": "http://new.dbpedia.org/resource/आलु"
+    },
+    {
+      "type": "uri",
+      "value": "http://ku.dbpedia.org/resource/Kartol"
+    },
+    {
+      "type": "uri",
+      "value": "http://nah.dbpedia.org/resource/Tlālcamohtli"
+    },
+    {
+      "type": "uri",
+      "value": "http://de.dbpedia.org/resource/Kartoffel"
+    },
+    {
+      "type": "uri",
+      "value": "http://kk.dbpedia.org/resource/Картоп"
+    },
+    {
+      "type": "uri",
+      "value": "http://et.dbpedia.org/resource/Harilik_kartul"
+    },
+    {
+      "type": "uri",
+      "value": "http://scn.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://eunis.eea.europa.eu/species/184915"
+    },
+    {
+      "type": "uri",
+      "value": "http://szl.dbpedia.org/resource/Kartofel"
+    },
+    {
+      "type": "uri",
+      "value": "http://sm.dbpedia.org/resource/Pateta"
+    },
+    {
+      "type": "uri",
+      "value": "http://kaa.dbpedia.org/resource/Kartoshka"
+    },
+    {
+      "type": "uri",
+      "value": "http://mg.dbpedia.org/resource/Ovy"
+    },
+    {
+      "type": "uri",
+      "value": "http://da.dbpedia.org/resource/Kartoffel"
+    },
+    {
+      "type": "uri",
+      "value": "http://to.dbpedia.org/resource/Pateta"
+    },
+    {
+      "type": "uri",
+      "value": "http://sr.dbpedia.org/resource/Кромпир"
+    },
+    {
+      "type": "uri",
+      "value": "http://rdf.freebase.com/ns/m.05vtc"
+    },
+    {
+      "type": "uri",
+      "value": "http://ne.dbpedia.org/resource/आलु"
+    },
+    {
+      "type": "uri",
+      "value": "http://ml.dbpedia.org/resource/ഉരുളക്കിഴങ്ങ്"
+    },
+    {
+      "type": "uri",
+      "value": "http://ay.dbpedia.org/resource/Ch'uqi"
+    },
+    {
+      "type": "uri",
+      "value": "http://ur.dbpedia.org/resource/آلو"
+    },
+    {
+      "type": "uri",
+      "value": "http://fy.dbpedia.org/resource/Ierdappel"
+    },
+    {
+      "type": "uri",
+      "value": "http://mdf.dbpedia.org/resource/Модамарь"
+    },
+    {
+      "type": "uri",
+      "value": "http://bo.dbpedia.org/resource/ཞོ་ཁོག"
+    },
+    {
+      "type": "uri",
+      "value": "http://map_bms.dbpedia.org/resource/Kenthang"
+    },
+    {
+      "type": "uri",
+      "value": "http://ast.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://sw.dbpedia.org/resource/Kiazi_cha_kizungu"
+    },
+    {
+      "type": "uri",
+      "value": "http://nv.dbpedia.org/resource/Nímasii"
+    },
+    {
+      "type": "uri",
+      "value": "http://dsb.dbpedia.org/resource/Kulka"
+    },
+    {
+      "type": "uri",
+      "value": "http://oc.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://ar.dbpedia.org/resource/بطاطس"
+    },
+    {
+      "type": "uri",
+      "value": "http://sn.dbpedia.org/resource/Mbatatisi"
+    },
+    {
+      "type": "uri",
+      "value": "http://th.dbpedia.org/resource/มันฝรั่ง"
+    },
+    {
+      "type": "uri",
+      "value": "http://sh.dbpedia.org/resource/Krumpir"
+    },
+    {
+      "type": "uri",
+      "value": "http://lmo.dbpedia.org/resource/Solanum_tuberosum"
+    },
+    {
+      "type": "uri",
+      "value": "http://nds_nl.dbpedia.org/resource/Eerpel"
+    },
+    {
+      "type": "uri",
+      "value": "http://vi.dbpedia.org/resource/Khoai_tây"
+    }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#label": [
+    {
+      "type": "literal",
+      "value": "Pomme de terre",
+      "lang": "fr"
+    },
+    {
+      "type": "literal",
+      "value": "Solanum tuberosum",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "بطاطس",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "马铃薯",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "Potato",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Kartoffel",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "Aardappel",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "Картофель",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "ジャガイモ",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Ziemniak",
+      "lang": "pl"
+    },
+    {
+      "type": "literal",
+      "value": "Solanum tuberosum",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "Batata",
+      "lang": "pt"
+    }
+  ],
+  "http://purl.org/dc/terms/subject": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Root_vegetables"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Tubers"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Crops_originating_from_the_Americas"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Spanish_words_and_phrases"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Plants_described_in_1753"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Plants_with_sequenced_genomes"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Staple_foods"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Crops_originating_from_Bolivia"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Crops_originating_from_Peru"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Potatoes"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Category:Cuisine_of_Northern_Ireland"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/depiction": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Special:FilePath/Patates.jpg"
+    }
+  ],
+  "http://www.w3.org/ns/prov#wasDerivedFrom": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Potato?oldid=606119267"
+    }
+  ],
+  "http://www.w3.org/2000/01/rdf-schema#comment": [
+    {
+      "type": "literal",
+      "value": "البَطَاطا أو البَطَاطِس (الاسم العلمي Solanum tuberosum) هي نوع من النباتات الباذنجانية وهي من أكثر محاصيل الخضراوات انتشارًا في العالم، كما أنها واحدة من أشهر الأطعمة، وللبطاطا قيمة غذائية وأضرار صحية كذلك.",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "Die Kartoffel (Solanum tuberosum), in Teilen Deutschlands, Österreichs und der Schweiz auch als Erdapfel (Herdöpfel) oder Grundbirne (Grumbeer) und im restlichen deutschsprachigen Raum unter verschiedenen Regionalnamen bekannt, ist eine Nutzpflanze aus der Familie der Nachtschattengewächse (Solanaceae), zu der auch Tomate (Solanum lycopersicum), Paprika (Capsicum) und Tabak (Nicotiana) gehören.",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "马铃薯（学名：Solanum tuberosum，英语：Potato），属茄科多年生草本植物，块茎可供食用，是全球第三大重要的粮食作物，仅次于小麦和玉米。马铃薯的人工栽培最早可追溯到大约公元前8000年到公元前5000年的秘鲁南部地区。",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "De aardappel (Solanum tuberosum) is een plant die ondergronds een energievoorraad in de vorm van zetmeel aanlegt. Het zetmeel wordt bewaard in de vorm van knollen, die eveneens aardappelen of aardappels worden genoemd. De knollen worden gevormd aan ondergrondse stengels, stolonen genoemd. De aardappel is in de wereld het belangrijkste voedselgewas na rijst, tarwe en mais. In veel Europese en westerse landen is de aardappel een basisvoedingsmiddel.",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "ジャガイモ（馬鈴薯、英: potato、学名：Solanum tuberosum L.）は、ナス科ナス属の植物。地下茎を食品として利用する。ジャガイモは地下の茎の部分（塊茎）を食用にする。加熱調理して食べられるほかに、デンプン原料としても利用される。比較的保存がきく食材であるが、暗くても温度の高いところに保存すると発芽しやすいため、涼しい場所での保管が望ましい。芽や緑化した塊茎には毒性成分ポテトグリコアルカロイド（ソラニンなど）が多く含まれ中毒の元になる。ジャガイモの原産は南米アンデス山脈の高地といわれる。16世紀には、スペイン人によりヨーロッパにもたらされた。このとき運搬中の船内で芽が出たものを食べて、毒にあたった為「悪魔の植物」と呼ばれた。日本には、1600年ごろにオランダ船によりジャカルタ港より運ばれた。日本では当時は観賞用として栽培されたという。日本では北海道が最大の生産地で、夏の終わりから秋にかけて収穫される。九州の長崎では冬に植え付けて春に出荷する。",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Карто́фель, Паслён клубненосный (лат. Solánum tuberósum) — вид многолетних клубненосных травянистых растений из рода Паслён (Solanum) семейства Паслёновые (Solanaceae). Клубни картофеля являются важным продуктом питания, в отличие от ядовитых плодов, содержащих гликоалкалоид соланин. Клубни картофеля имеют свойство зеленеть при хранении на свету, что является индикатором повышенного содержания соланина в них.",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "La pomme de terre, ou patate (langage familier, canadianisme et belgicisme), est un tubercule comestible produit par l’espèce Solanum tuberosum, appartenant à la famille des solanacées. Le terme désigne également la plante elle-même, plante herbacée, vivace par ses tubercules en l’absence de gel mais cultivée comme une plante annuelle. La pomme de terre est une plante qui réussit dans la plupart des sols, mais elle préfère les sols légers légèrement acides.",
+      "lang": "fr"
+    },
+    {
+      "type": "literal",
+      "value": "La papa o patata (Solanum tuberosum) es una planta perteneciente a la familia de las solanáceas originaria de Suramérica y cultivada por todo el mundo por sus tubérculos comestibles. Fue domesticada en el altiplano andino por sus habitantes hace unos 7000 años, y más tarde fue llevada a Europa por los conquistadores españoles como una curiosidad botánica más que como una planta alimenticia.",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "Ziemniak, kartofel (Solanum tuberosum L.) – gatunek byliny należący do rodziny psiankowatych. Nazwa ”ziemniak” odnosi się zarówno do całej rośliny, jak i do jej jadalnych, bogatych w skrobię bulw pędowych, z powodu których gatunek jest uprawiany na masową skalę. Roślina wywodzi się z Andów, gdzie udomowiono ją ok. 8 tysięcy lat temu. Ziemniak został przywieziony do Europy w końcu XVI wieku, w ciągu następnych stuleci stał się integralną częścią wielu kuchni z całego świata.",
+      "lang": "pl"
+    },
+    {
+      "type": "literal",
+      "value": "The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum L. The word \"potato\" may refer to the plant itself in addition to the edible tuber. In the Andes, where the species is indigenous, there are some other closely related cultivated potato species. Potatoes were introduced outside the Andes region four centuries ago, and have become an integral part of much of the world's food supply.",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "La patata (Solanum tuberosum L.) è una pianta erbacea appartenente alla famiglia delle Solanaceae (Dicotiledoni), originaria del Perù, della Bolivia, del Messico e del Cile e portata in Europa dagli spagnoli nel XVI secolo intorno al 1570. Non si conoscono varietà spontanee né si sa da quale specie originaria di Solanum si sia originata la patata edule.",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "Batata, batata-inglesa, batatinha, escorva papa, ou semilha(Solanum tuberosum) é uma planta perene da família das solanáceas. A planta adulta geralmente tem entre sessenta a cem centímetros de altura, possui flores e frutos e produz um tubérculo comestível rico em amido, um carboidrato. Os nomes podem referir-se tanto ao tubérculo comestível quanto à planta como um todo.",
+      "lang": "pt"
+    }
+  ],
+  "http://dbpedia.org/property/species": [
+    {
+      "type": "literal",
+      "value": "S. tuberosum",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/right": [
+    {
+      "type": "literal",
+      "value": 1,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Potato"
+    }
+  ],
+  "http://dbpedia.org/property/familia": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Solanaceae"
+    }
+  ],
+  "http://dbpedia.org/property/ordo": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Solanales"
+    }
+  ],
+  "http://dbpedia.org/property/regnum": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Plant"
+    }
+  ],
+  "http://dbpedia.org/property/unrankedOrdo": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Asterids"
+    }
+  ],
+  "http://dbpedia.org/ontology/class": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Eudicots"
+    }
+  ],
+  "http://dbpedia.org/ontology/family": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Solanaceae"
+    }
+  ],
+  "http://dbpedia.org/ontology/kingdom": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Plant"
+    }
+  ],
+  "http://dbpedia.org/ontology/order": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Solanales"
+    },
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Asterids"
+    }
+  ],
+  "http://dbpedia.org/property/hasPhotoCollection": [
+    {
+      "type": "uri",
+      "value": "http://wifo5-03.informatik.uni-mannheim.de/flickrwrappr/photos/Potato"
+    }
+  ],
+  "http://dbpedia.org/property/name": [
+    {
+      "type": "literal",
+      "value": "Potato, raw, with skin",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/thumbnail": [
+    {
+      "type": "uri",
+      "value": "http://en.wikipedia.org/wiki/Special:FilePath/Patates.jpg?width=300"
+    }
+  ],
+  "http://dbpedia.org/ontology/abstract": [
+    {
+      "type": "literal",
+      "value": "La pomme de terre, ou patate (langage familier, canadianisme et belgicisme), est un tubercule comestible produit par l’espèce Solanum tuberosum, appartenant à la famille des solanacées. Le terme désigne également la plante elle-même, plante herbacée, vivace par ses tubercules en l’absence de gel mais cultivée comme une plante annuelle. La pomme de terre est une plante qui réussit dans la plupart des sols, mais elle préfère les sols légers légèrement acides. La plante est sujette aux maladies dans des sols calcaires ou manquant d’humus.La pomme de terre est originaire de la cordillère des Andes dans le sud-ouest de l’Amérique du Sud où son utilisation remonte à environ 8 000 ans. Introduite en Europe vers la fin du XVIe siècle à la suite de la découverte de l’Amérique par les conquistadors espagnols, elle s’est rapidement diffusée dans le monde et est aujourd’hui cultivée dans plus de 150 pays sous pratiquement toutes les latitudes habitées.C’est une source importante de glucides, qui se présentent principalement sous forme de fécule, mais aussi de protéines et de vitamines. Ses qualités nutritives et sa facilité de culture font qu’elle est devenue l’un des aliments de base de l’humanité : elle figure parmi les légumes et féculents les plus consommés et la principale denrée alimentaire non céréalière du monde. Cultivée et consommée localement, relativement peu commercialisée sur le marché mondial, elle est recommandée par l’ONU pour atteindre la sécurité alimentaire. C’est aussi la culture alimentaire la plus productive, produisant plus de matière sèche à l’hectare que les céréales, 85 % de la matière sèche produite par la plante étant comestible pour l’homme contre environ 50 % pour les céréales. Le rendement moyen est d’environ 17 tonnes à l’hectare au niveau mondial, mais se situe entre 40 et 50 tonnes dans certains pays développés d’Amérique du Nord et d’Europe occidentale. La pomme de terre reste sous-utilisée dans certains pays du Tiers Monde, notamment en Afrique sub-saharienne, mais globalement sa consommation progresse dans les pays en développement, tandis que dans les pays développés elle tend à diminuer, basculant de plus en plus vers des formes transformées (produits apertisés, déshydratés ou surgelés).La fécule de pomme de terre a donné naissance à une industrie de transformation aux multiples débouchés dans les secteurs agro-alimentaire, cosmétique, pharmaceutique et industriel.Compte tenu de son importance économique, de nombreuses études scientifiques sur la pomme de terre et les espèces apparentées, notamment dans le domaine de la génétique, sont menées par des institutions publiques ou privées de différents pays, coordonnées au niveau mondial, entre autres, par le centre international de la pomme de terre.",
+      "lang": "fr"
+    },
+    {
+      "type": "literal",
+      "value": "La papa o patata (Solanum tuberosum) es una planta perteneciente a la familia de las solanáceas originaria de Suramérica y cultivada por todo el mundo por sus tubérculos comestibles. Fue domesticada en el altiplano andino por sus habitantes hace unos 7000 años, y más tarde fue llevada a Europa por los conquistadores españoles como una curiosidad botánica más que como una planta alimenticia. Su consumo fue creciendo y su cultivo se expandió a todo el mundo hasta convertirse hoy día en uno de los principales alimentos para el ser humano.",
+      "lang": "es"
+    },
+    {
+      "type": "literal",
+      "value": "البَطَاطا أو البَطَاطِس (الاسم العلمي Solanum tuberosum) هي نوع من النباتات الباذنجانية وهي من أكثر محاصيل الخضراوات انتشارًا في العالم، كما أنها واحدة من أشهر الأطعمة، وللبطاطا قيمة غذائية وأضرار صحية كذلك. البطاطا تزرع في معظم الدول، وتسمى في أقطار المشرق والمغرب بالبطاطا، وقد دخلت البطاطا الإنديز منذ أكثر من 4 قرون، وهى مصحول درنى أى تنمو الثمار تحت الأرض ،وأصبحت جزءا لا يتجزأ من كثير من المأكولات في العالم، فالبطاطا محصول غذائى يزرعه كل أنحاء العالم، وتأخذ البطاطا المركز الرابع من حيث الأهمية بعد القمح والأرز والذرة، وتحتاج البطاطا إلى رعاية خاصة عند تخزينها، إذ أنها تخزن في مستودعات باردة توجد البطاطا البرية في جميع أنحاء الأمريكتين، من الولايات المتحدة إلى جنوب شيلي، ويعتقد أن البطاطا قد تم استئناسها (زراعتها) بشكل مستقل ولكن ثبت في وقت لاحق في التجارب الجينية لمجموعة واسعة من الأصناف والأنواع البرية أن هناك أصل واحد للبطاطا في منطقة جنوب بيرو في الوقت الحاضر، وأقصى شمال غرب بوليفيا، وقد استئنست البطاطا من 7000 إلى 10000 عام، وهناك الآن أكثر من ألف نوع من البطاطا.أصل البطاطا يرجع إلى أرخبيل شيلوي وكانت تلك هي مركز زراعة البطاطا في أعقاب غزو الإسبان لإمبراطورية الإنكا، قام الإسبان بتصدير البطاطا إلى أوروبا في النصف الثاني من القرن السادس عشر الميلادى، وقد نقل البحارة البطاطا إلى جميع أنحاء العالم، كانت زراعة البطاطا بطيئة وضعيفة في أوروبا، نظرا لأن الفلاحيين كانوا لايثقون في زراعتها،",
+      "lang": "ar"
+    },
+    {
+      "type": "literal",
+      "value": "Die Kartoffel (Solanum tuberosum), in Teilen Deutschlands, Österreichs und der Schweiz auch als Erdapfel (Herdöpfel) oder Grundbirne (Grumbeer) und im restlichen deutschsprachigen Raum unter verschiedenen Regionalnamen bekannt, ist eine Nutzpflanze aus der Familie der Nachtschattengewächse (Solanaceae), zu der auch Tomate (Solanum lycopersicum), Paprika (Capsicum) und Tabak (Nicotiana) gehören. Im allgemeinen Sprachgebrauch meint man mit Kartoffeln meist die unterirdischen Knollen, mit denen die Pflanze sich vegetativ vermehren kann.Das Wort Kartoffel leitet sich von tartufolo ab, dem italienischen Wort für Trüffel, das wiederum abgeleitet ist von lateinisch terrae tuber („Erdknolle“). Die nur entfernt verwandte Süßkartoffel (Ipomoea batatas) bekam ihren Namen wegen der ähnlichen Verwendung und dem ähnlichen Aussehen der Knollen. Die Samen werden in tomatenähnlichen Beeren gebildet, welche wie alle grünen Teile der Pflanze und die Keime der Knolle für Menschen leicht giftig sind.Weltweit werden jährlich etwa 300 Millionen Tonnen Kartoffeln geerntet. Die Kartoffel ist eins der wichtigsten Nahrungsmittel der Welt, daneben aber auch Futtermittel und Industrierohstoff.",
+      "lang": "de"
+    },
+    {
+      "type": "literal",
+      "value": "The potato is a starchy, tuberous crop from the perennial nightshade Solanum tuberosum L. The word \"potato\" may refer to the plant itself in addition to the edible tuber. In the Andes, where the species is indigenous, there are some other closely related cultivated potato species. Potatoes were introduced outside the Andes region four centuries ago, and have become an integral part of much of the world's food supply. It is the world's fourth-largest food crop, following maize, wheat and rice.Wild potato species occur throughout the Americas, from the United States to southern Chile. The potato was originally believed to have been domesticated independently in multiple locations, but later genetic testing of the wide variety of cultivars and wild species proved a single origin for potatoes in the area of present-day southern Peru and extreme northwestern Bolivia (from a species in the Solanum brevicaule complex), where they were domesticated 7,000–10,000 years ago. Following centuries of selective breeding, there are now over a thousand different types of potatoes. Over 99% of the presently cultivated potatoes worldwide are descended from varieties that originated in the lowlands of south-central Chile, which have displaced formerly popular varieties from the Andean highlands.The annual diet of an average person in the first decade of the 21st century included about 33 kg (73 lb) of potato. However, the local importance of potato is extremely variable and rapidly changing. It remains an essential crop in Europe (especially eastern and central Europe), where per capita production is still the highest in the world, but the most rapid expansion over the past few decades has occurred in southern and eastern Asia. China is now the world's largest potato-producing country, and nearly a third of the world's potatoes are harvested in China and India.",
+      "lang": "en"
+    },
+    {
+      "type": "literal",
+      "value": "Batata, batata-inglesa, batatinha, escorva papa, ou semilha(Solanum tuberosum) é uma planta perene da família das solanáceas. A planta adulta geralmente tem entre sessenta a cem centímetros de altura, possui flores e frutos e produz um tubérculo comestível rico em amido, um carboidrato. Os nomes podem referir-se tanto ao tubérculo comestível quanto à planta como um todo. A espécie teve origem no Cordilheira dos Andes, próximo ao Lago Titicaca, e foi levada a outras regiões do mundo por colonizadores europeus. Atualmente são cultivadas milhares de variedades da espécie em todos os continentes e está inserida como um alimento fundamental na cultura mundial. A relação da batata com a batata-doce é bem pequena porque os vegetais não compartilham do mesmo gênero ou família, fazendo parte apenas da mesma ordem. A espécie começou a ser cultivada por civilizações andinas há cerca de oito mil anos e o cultivo foi aperfeiçoado pelos Incas, que utilizavam, inclusive, técnicas de irrigação. Os espanhóis introduziram, no século XVI, a espécie na Europa, e se tornou um alimento fundamental no continente. Entretanto a grande dependência da batata fez com que o ataque de pragas que devastam as plantações causasse a morte de milhões de pessoas que tinham a batata como principal alimento, tal como aconteceu na Irlanda em 1845. Atualmente, o tubérculo é o quarto alimento mais consumido do mundo, com milhares de variedades de diferentes cores, sabores e tamanhos que são utilizadas em receitas no mundo todo. O maior produtor mundial é a China, cuja produção em conjunto com a da Índia corresponde a mais de um terço da produção mundial. Como qualquer cultura, as plantações estão sujeitas ao ataque de diversas espécies de bactérias, fungos e insetos que comprometem a produtividade. Por isso, investe-se na criação de variedades mais resistentes, além da criação de batatas geneticamente modificadas, apesar do grande temor que ainda existe sobre produtos transgênicos. O aumento da produtividade é visto, ainda, como uma solução para acabar com a fome em diversos países. Para reconhecer a importância do tubérculo no mundo, o ano de 2008 foi intitulado o Ano Internacional da Batata pela Organização das Nações Unidas.",
+      "lang": "pt"
+    },
+    {
+      "type": "literal",
+      "value": "ジャガイモ（馬鈴薯、英: potato、学名：Solanum tuberosum L.）は、ナス科ナス属の植物。地下茎を食品として利用する。ジャガイモは地下の茎の部分（塊茎）を食用にする。加熱調理して食べられるほかに、デンプン原料としても利用される。比較的保存がきく食材であるが、暗くても温度の高いところに保存すると発芽しやすいため、涼しい場所での保管が望ましい。芽や緑化した塊茎には毒性成分ポテトグリコアルカロイド（ソラニンなど）が多く含まれ中毒の元になる。ジャガイモの原産は南米アンデス山脈の高地といわれる。16世紀には、スペイン人によりヨーロッパにもたらされた。このとき運搬中の船内で芽が出たものを食べて、毒にあたった為「悪魔の植物」と呼ばれた。日本には、1600年ごろにオランダ船によりジャカルタ港より運ばれた。日本では当時は観賞用として栽培されたという。日本では北海道が最大の生産地で、夏の終わりから秋にかけて収穫される。九州の長崎では冬に植え付けて春に出荷する。",
+      "lang": "ja"
+    },
+    {
+      "type": "literal",
+      "value": "Карто́фель, Паслён клубненосный (лат. Solánum tuberósum) — вид многолетних клубненосных травянистых растений из рода Паслён (Solanum) семейства Паслёновые (Solanaceae). Клубни картофеля являются важным продуктом питания, в отличие от ядовитых плодов, содержащих гликоалкалоид соланин. Клубни картофеля имеют свойство зеленеть при хранении на свету, что является индикатором повышенного содержания соланина в них. Употребление в пищу одного позеленевшего клубня вместе с кожурой может привести к серьёзному отравлению. Другим индикатором повышенного содержания яда в картофеле является горьковатый вкус.",
+      "lang": "ru"
+    },
+    {
+      "type": "literal",
+      "value": "De aardappel (Solanum tuberosum) is een plant die ondergronds een energievoorraad in de vorm van zetmeel aanlegt. Het zetmeel wordt bewaard in de vorm van knollen, die eveneens aardappelen of aardappels worden genoemd. De knollen worden gevormd aan ondergrondse stengels, stolonen genoemd. De aardappel is in de wereld het belangrijkste voedselgewas na rijst, tarwe en mais. In veel Europese en westerse landen is de aardappel een basisvoedingsmiddel. Net als rijst, pasta en brood is de aardappel een belangrijke bron van koolhydraten. Aardappels bevatten ook vitamine B6 en vezels.In Nederland en België wordt de aardappel gezien als maaltijddrager, in andere landen telt hij mee als groentesoort.",
+      "lang": "nl"
+    },
+    {
+      "type": "literal",
+      "value": "La patata (Solanum tuberosum L.) è una pianta erbacea appartenente alla famiglia delle Solanaceae (Dicotiledoni), originaria del Perù, della Bolivia, del Messico e del Cile e portata in Europa dagli spagnoli nel XVI secolo intorno al 1570. Non si conoscono varietà spontanee né si sa da quale specie originaria di Solanum si sia originata la patata edule.",
+      "lang": "it"
+    },
+    {
+      "type": "literal",
+      "value": "马铃薯（学名：Solanum tuberosum，英语：Potato），属茄科多年生草本植物，块茎可供食用，是全球第三大重要的粮食作物，仅次于小麦和玉米。马铃薯的人工栽培最早可追溯到大约公元前8000年到公元前5000年的秘鲁南部地区。",
+      "lang": "zh"
+    },
+    {
+      "type": "literal",
+      "value": "Ziemniak, kartofel (Solanum tuberosum L.) – gatunek byliny należący do rodziny psiankowatych. Nazwa ”ziemniak” odnosi się zarówno do całej rośliny, jak i do jej jadalnych, bogatych w skrobię bulw pędowych, z powodu których gatunek jest uprawiany na masową skalę. Roślina wywodzi się z Andów, gdzie udomowiono ją ok. 8 tysięcy lat temu. Ziemniak został przywieziony do Europy w końcu XVI wieku, w ciągu następnych stuleci stał się integralną częścią wielu kuchni z całego świata. Obecnie jest czwartą pod względem produkcji rośliną uprawną (po pszenicy, ryżu i kukurydzy).W stanie dzikim rozmaite gatunki psianek podobnych do ziemniaka występują w obu Amerykach, od Stanów Zjednoczonych po Urugwaj. Pierwotnie wierzono, że ziemniaka udomowiono niezależnie w wielu kulturach, jednak nowsze badania genetyczne wykazały, że wszystkie odmiany rośliny wywodzą się z gatunku Solanum brevicaule, kultywowanego w dzisiejszym południowym Peru od przynajmniej 7 tysięcy lat. W wyniku setek lat krzyżowania i sztucznej selekcji do dziś powstało ponad tysiąc odmian uprawnych ziemniaka. Ponad 99% z nich wywodzi swój germplasm od jednej odmiany hodowanej pierwotnie na wyspach Chiloé.Po podboju Państwa Inków, Hiszpanie sprowadzili ziemniaki do Europy około 1570 roku, skąd żeglarze rozprzestrzenili uprawę rośliny na cały świat. Wprawdzie europejscy rolnicy początkowo byli wobec nowej uprawy sceptyczni (wierzono na przykład, że jedzenie bulw ziemniaka wywołuje trąd), ale do XIX wieku stała się ona podstawą diety milionów mieszkańców kontynentu i nieodzownym elementem wielu kuchni regionalnych. Jej znaczenie wzrosło do tego stopnia, że niektórzy badacze przypisują uprawie ziemniaka dziewiętnastowieczny gwałtowny wzrost populacji Europy. Jednak przestawienie produkcji rolnej wyłącznie na ziemniaki niosło także niebezpieczeństwa. Niska różnorodność genetyczna odmian kultywowanych w Europie spowodowała, że były one znacznie mniej odporne na choroby, niż odmiany i gatunki występujące w Amerykach. W 1845 przywleczona zza oceanu tzw. zaraza ziemniaczana wywołana przez lęgniowce z gatunku Phytophthora infestans zniszczyła w ciągu dwóch lat do 90 procent zbiorów ziemniaka w Irlandii. Doprowadziło to do wielkiego głodu i śmierci około miliona osób. Od tego czasu jednak europejskie odmiany wzbogacono genami odmian z Andów, gdzie w jednej tylko dolinie może rosnąć ich ponad sto, a jedno domostwo zwykle hoduje ich ponad tuzin.Dziś dieta przeciętnego mieszkańca Ziemi zawiera ok. 33 kilogramów ziemniaków rocznie. Lokalne znaczenie ziemniaka jest znacznie zróżnicowane: w Europie bulwy są jednym z podstawowych składników codziennej diety i to tu występuje największa ich produkcja per capita. Jednak w ciągu ostatnich kilku dekad konsumpcja ziemniaków zwiększyła się znacząco także w krajach dotąd niemal ich nie produkujących, szczególnie w Azji Południowo-Wschodniej. Obecnie Chiny są największym na świecie producentem ziemniaków, a wraz z Indiami produkują niemal trzecią część światowych zasobów",
+      "lang": "pl"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageID": [
+    {
+      "type": "literal",
+      "value": 23501,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageRevisionID": [
+    {
+      "type": "literal",
+      "value": 606119267,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/division": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Flowering_plant"
+    }
+  ],
+  "http://dbpedia.org/property/sourceUsda": [
+    {
+      "type": "literal",
+      "value": 1,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/fiber": [
+    {
+      "type": "literal",
+      "value": "2.2",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/kj": [
+    {
+      "type": "literal",
+      "value": 321,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/fat": [
+    {
+      "type": "literal",
+      "value": "0.1",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/thiaminMg": [
+    {
+      "type": "literal",
+      "value": 0.08,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/vitb6Mg": [
+    {
+      "type": "literal",
+      "value": 0.295,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/vitkUg": [
+    {
+      "type": "literal",
+      "value": 1.9,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/viteMg": [
+    {
+      "type": "literal",
+      "value": 0.01,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/sodiumMg": [
+    {
+      "type": "literal",
+      "value": 6,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/zincMg": [
+    {
+      "type": "literal",
+      "value": 0.29,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/pantothenicMg": [
+    {
+      "type": "literal",
+      "value": 0.296,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/manganeseMg": [
+    {
+      "type": "literal",
+      "value": 0.153,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/protein": [
+    {
+      "type": "literal",
+      "value": "2.0",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/potassiumMg": [
+    {
+      "type": "literal",
+      "value": 421,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/niacinMg": [
+    {
+      "type": "literal",
+      "value": 1.05,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/phosphorusMg": [
+    {
+      "type": "literal",
+      "value": 57,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/magnesiumMg": [
+    {
+      "type": "literal",
+      "value": 23,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/folateUg": [
+    {
+      "type": "literal",
+      "value": 16,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/riboflavinMg": [
+    {
+      "type": "literal",
+      "value": 0.03,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/ironMg": [
+    {
+      "type": "literal",
+      "value": 0.78,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/water": [
+    {
+      "type": "literal",
+      "value": "75.0",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/starch": [
+    {
+      "type": "literal",
+      "value": "15.44",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/calciumMg": [
+    {
+      "type": "literal",
+      "value": 12,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/carbs": [
+    {
+      "type": "literal",
+      "value": "17.47",
+      "datatype": "http://dbpedia.org/datatype/gram"
+    }
+  ],
+  "http://dbpedia.org/property/binomial": [
+    {
+      "type": "literal",
+      "value": "Solanum tuberosum",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/binomialAuthority": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Carl_Linnaeus"
+    }
+  ],
+  "http://dbpedia.org/property/year": [
+    {
+      "type": "literal",
+      "value": 2011,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    }
+  ],
+  "http://dbpedia.org/property/imageCaption": [
+    {
+      "type": "literal",
+      "value": "Potato cultivars appear in a variety of colors, shapes, and sizes",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/genus": [
+    {
+      "type": "literal",
+      "value": "Solanum",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/ontology/genus": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Solanum"
+    }
+  ],
+  "http://dbpedia.org/property/plant": [
+    {
+      "type": "literal",
+      "value": "Potato",
+      "lang": "en"
+    }
+  ],
+  "http://dbpedia.org/property/binomialAuthority": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Carl_Linnaeus"
+    }
+  ],
+  "http://dbpedia.org/property/amount": [
+    {
+      "type": "literal",
+      "value": 42.3,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 8,
+      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    {
+      "type": "literal",
+      "value": 8.199999999999999,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 7.7,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 8.300000000000001,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 32.7,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 88.40000000000001,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 24.2,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 19.4,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    },
+    {
+      "type": "literal",
+      "value": 11.8,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/vitcMg": [
+    {
+      "type": "literal",
+      "value": 19.7,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ],
+  "http://dbpedia.org/property/class": [
+    {
+      "type": "uri",
+      "value": "http://dbpedia.org/resource/Eudicots"
+    }
+  ],
+  "http://dbpedia.org/property/note": [
+    {
+      "type": "uri",
+      "value": "http://ndb.nal.usda.gov/ndb/search/list?qlookup=11352&format=Full"
+    }
+  ],
+  "http://dbpedia.org/ontology/wikiPageExternalLink": [
+    {
+      "type": "uri",
+      "value": "http://potatoassociation.org/documents/A_ProductionHandbook_Final_000.pdf"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.cipotato.org/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.jstor.org/stable/3744936"
+    },
+    {
+      "type": "uri",
+      "value": "http://ndb.nal.usda.gov/ndb/search/list?qlookup=11352&format=Full"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.jstor.org/pss/3786266"
+    },
+    {
+      "type": "uri",
+      "value": "http://glks.ipk-gatersleben.de/home.php"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.amazon.com/Notes-Potato-Watcher-University-Agriculture/dp/1585441384/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.lanra.uga.edu/potato/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.potato.org.uk/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.potato2008.org/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.potatocongress.org/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.potatoes.wsu.edu/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.tumbledownfarm.com/drupal/Cyclopedia_of_American_Agriculture/Crops/Potato"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.gmo-safety.eu/topic/122"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.plantbreeding.wur.nl/potatopedigree/"
+    },
+    {
+      "type": "uri",
+      "value": "http://research.cip.cgiar.org/confluence/display/wpa/Potato+Info+Links"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.pnas.org/cgi/content/full/102/41/14694"
+    },
+    {
+      "type": "uri",
+      "value": "http://potatogenome.net"
+    },
+    {
+      "type": "uri",
+      "value": "http://research.cip.cgiar.org/confluence/display/wpa/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.geochembio.com/biology/organisms/potato/"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.economist.com/world/la/displaystory.cfm?story_id=10766599"
+    },
+    {
+      "type": "uri",
+      "value": "http://www.economist.com/opinion/displaystory.cfm?story_id=10766030"
+    },
+    {
+      "type": "uri",
+      "value": "http://crosstree.info/Documents/POTATO%20STORAGE.pdf"
+    }
+  ],
+  "http://dbpedia.org/property/world": [
+    {
+      "type": "literal",
+      "value": 374.4,
+      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+    }
+  ]
+}

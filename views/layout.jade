@@ -9,9 +9,10 @@ html(lang='fr')
     title= defaultTitle + ' - ' + title || defaultTitle
     style
       include ./includes/css/above.min.css
+
+    link(rel='stylesheet', href='/css/semantics-template.css', async)
     //
       link(rel='stylesheet', href='/css/bootstrap.min.css', async)
-      link(rel='stylesheet', href='/css/semantics-template.css', async)
 
   body
     include ./includes/menu.jade
@@ -21,6 +22,8 @@ html(lang='fr')
 
     // jQuery + Bootstrap JavaScript
     script(src='/js/jBootstrap.min.js')
+    script(src='/js/bootstrap-select.js')
+    script(src='/js/jquery.tiling.js')
     script.
       (function(d, t) {
           var g = document.createElement(t);
@@ -28,3 +31,5 @@ html(lang='fr')
           g.href = '/css/bootstrap.min.css';
           d.appendChild(g);
       }(document.head, 'link'));
+      $('.selectpicker').selectpicker();
+      $('.tiling').tiling();
