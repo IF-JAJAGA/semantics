@@ -9,6 +9,7 @@ var
   // Custom dependencies
   request = require('request'),
   debug = require('debug')('dbpedia-spotlight'),
+  progress = require('debug')('progress'),
   _ = require('underscore'),
   async = require('async'),
 
@@ -42,7 +43,9 @@ var
  * @param {doneCallback} done - Gives the result (or err if something was wrong)
  */
 module.exports.getGraph = getGraph = function(userOptions, done) {
-  var results = {};
+  var results = {},
+    totalNb,
+    doneNb;
 
   userOptions = _.extend({
     confidence: 0.2,
@@ -51,6 +54,8 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
     apikey: '3d37dccc5fa62c6af0e6f5978bb826c0ebdf1f30'
   }, userOptions);
 
+  totalNb = userOptions.pages.length;
+  doneNb = 0;
   async.each(userOptions.pages, function(pageUri, nextUri) {
     if (cacheGraphs.hasOwnProperty(pageUri) && cacheGraphs[pageUri]) {
       results[pageUri] = cacheGraphs[pageUri];
@@ -61,10 +66,12 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
 
       getGraphFromText(userOptions, text, function(err, graph) {
         if (err) {
-          debug('Error for page ' + pageUri);
-          debug(err.stack);
+          debug('Error for page ' + pageUri + '\n' + err.stack);
         }
+        cacheGraphs[pageUri] = graph;
         results[pageUri] = graph;
+        ++doneNb;
+        progress(doneNb + ' / ' + totalNb);
         return nextUri();
       });
 
@@ -103,7 +110,7 @@ module.exports.getText = getText = function(uri, apikey, next) {
     }
     if (err) return next(new Error(err));
 
-    debug(parsed);
+    if (parsed.text) debug('text OK for ' + options.qs.url);
     return next(null, parsed.text);
   });
 };
@@ -124,8 +131,6 @@ module.exports.getGraphFromText = getGraphFromText
     }
   };
 
-
-  debug(options);
   request(options, function(err, res, body) {
     var resources,
       key,
@@ -136,7 +141,6 @@ module.exports.getGraphFromText = getGraphFromText
     if (err) return cbResult(new Error(err));
 
     try {
-      debug(body);
       resources = JSON.parse(body).Resources;
     } catch (e) {
       return cbResult(e);
@@ -145,6 +149,8 @@ module.exports.getGraphFromText = getGraphFromText
       debug('Nothing was found for ' + options.url);
 
       return cbResult(new Error('Unable to parse response of ' + options.url));
+    } else {
+      debug('Spotlight OK for ' + options.url);
     }
 
     for (i = 0; entityUri = resources[i] && resources[i]['@URI']; ++i) {
@@ -216,7 +222,7 @@ module.exports.getDbpediaGraph = getDbpediaGraph
         graph[key] = subGraph[key];
       }
       if (!_.isEmpty(subGraph)) {
-        debug('Done processing: ' + entityUri);
+        debug('Got neighbors for: ' + entityUri);
       }
       return nextEntity();
     });
