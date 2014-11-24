@@ -29,7 +29,7 @@ var
 getProperty = function(object, property, lang) {
   var value = object[property];
   if(!value)
-    return undefined;
+    return {value: 'N/A'};
   if(lang) {
     var ret = _.find(value, function(prop) {
       return prop.lang == lang;
@@ -137,7 +137,6 @@ router.get('/', function(req, res, next) {
             });
           }
         }
-        break;
       }
 
       var pairs = _.pairs(objects),
