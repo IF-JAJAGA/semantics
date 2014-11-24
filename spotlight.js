@@ -66,9 +66,9 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
 
       getGraphFromText(userOptions, text, function(err, graph) {
         if (err) {
-          debug('Error for page ' + pageUri);
-          debug(err.stack);
+          debug('Error for page ' + pageUri + '\n' + err.stack);
         }
+        cacheGraphs[pageUri] = graph;
         results[pageUri] = graph;
         ++doneNb;
         progress(doneNb + ' / ' + totalNb);
@@ -130,7 +130,6 @@ module.exports.getGraphFromText = getGraphFromText
       support: userOptions.support
     }
   };
-
 
   request(options, function(err, res, body) {
     var resources,
