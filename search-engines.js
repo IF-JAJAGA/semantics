@@ -20,31 +20,30 @@ module.exports.search = search = function(query, done) {
   google.build(function(api) {
     api.customsearch.cse.list({cx: CX, q: query, auth: API_KEY}, function(result) {
       var uri_tab = [],
-        i,
-        item,
-        json_final;
-
+        result_graph,
+        i;
       if(result.error){
         debug('An error occured', result);
-        return done(result);
+        return;
       }
 
-      for(i = 0; item = result.items[i]; ++i) {
-        uri_tab.push(item.link);
+      for(i in result.items){
+        uri_tab.push(result.items[i].link);
       }
 
+/*
+      handleResources(uri_tab, function(err, result_g){
+        var json_final;
+        //console.log(JSON.stringify(result_g,undefined,4));
+        result_graph = result_g;
+        json_final = {request: result.queries.request[0].searchTerms,
+            results : result_graph,
+            pages: uri_tab};
 
-      return done(null, uri_tab);
-
-      //TODO Ajouter au milieu les résultats pour lesquels on obtient un graphe
-
-      handleResources(uri_tab, function(err, result) {
-        //console.log(result);
+        return done(null, json_final);
       });
-      json_final = JSON.stringify({request: result.queries.request[0].searchTerms,/*TODO ici*/
-          pages: uri_tab}, undefined, 2);
-
-        //console.log(json_final);
+*/
+        return done(null, {pages: uri_tab});
     });
   });
 }
@@ -63,22 +62,23 @@ handleResources = function(resources, done) {
       resource,
       function(err, res, body) {
         if (err) return next(new Error(err));
-        var graph = {}, key;
+        var graph , key;
 
         try {
           graph = JSON.parse(body);
         } catch (err) {
-          //console.log('No information for: ' + resource);
         }
-        console.log(graph);
-        // WARNING: it is impossible for 2 graphs (in this case) to have the same
-        // subject, so we can safely merge them simply by adding all subject keys
+        if(graph !== undefined){
+          //console.log(JSON.stringify(graph, undefined, 2));
+          // WARNING: it is impossible for 2 graphs (in this case) to have the same
+          // subject, so we can safely merge them simply by adding all subject keys
 
-        for (key in graph) {
-          result[key] = graph[key];
-        }
-        if (!_.isEmpty(graph)) {
-          //debug('done processing: ' + resource);
+          for (key in graph) {
+            result[key] = graph[key];
+          }
+          if (!_.isEmpty(graph)) {
+            debug('done processing: ' + resource);
+          }
         }
         next();
 
@@ -89,5 +89,6 @@ handleResources = function(resources, done) {
     if (err) return done(new Error(err));
 
     done(null, result);
-  });
+  }
+);
 }

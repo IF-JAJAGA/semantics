@@ -48,7 +48,7 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
     confidence: 0.2,
     support: 20,
     live: false,
-    apikey: 'e37637f70668dafc97c8704df499c28826bb65cb'
+    apikey: '3d37dccc5fa62c6af0e6f5978bb826c0ebdf1f30'
   }, userOptions);
 
   async.each(userOptions.pages, function(pageUri, nextUri) {
@@ -103,6 +103,7 @@ module.exports.getText = getText = function(uri, apikey, next) {
     }
     if (err) return next(new Error(err));
 
+    debug(parsed);
     return next(null, parsed.text);
   });
 };
@@ -123,6 +124,8 @@ module.exports.getGraphFromText = getGraphFromText
     }
   };
 
+
+  debug(options);
   request(options, function(err, res, body) {
     var resources,
       key,
@@ -131,9 +134,9 @@ module.exports.getGraphFromText = getGraphFromText
       entitiesUris = [];
 
     if (err) return cbResult(new Error(err));
-    debug('Got response for ' + options.url);
 
     try {
+      debug(body);
       resources = JSON.parse(body).Resources;
     } catch (e) {
       return cbResult(e);
@@ -170,16 +173,14 @@ module.exports.getDbpediaGraph = getDbpediaGraph
   var graph = {};
 
   async.each(entitiesUris, function(entityUri, nextEntity) {
-    var escapedUri = entityUri;
+    var escapedUri;
 
     // Change to live can help if dbpedia is in maintenance
     if (live) {
-      escapedUri = escapedUri.replace(/^http:\/\/dbpedia/,
+      entityUri = escapedUri.replace(/^http:\/\/dbpedia/,
           'http://live.dbpedia');
     }
-    escapedUri = querystring.escape(escapedUri);
-
-    debug(entityUri);
+    escapedUri = querystring.escape(entityUri);
 
     if (cacheSubGraphs.hasOwnProperty(entityUri) && cacheSubGraphs[entityUri]) {
       // WARNING: it is impossible for 2 graphs (in this case) to have the same
@@ -193,6 +194,7 @@ module.exports.getDbpediaGraph = getDbpediaGraph
       return nextEntity();
     }
 
+    debug('Getting neighbors of ' + entityUri);
     // Getting all neighbors of the resource URI
     request('http://rdf-translator.appspot.com/convert/detect/rdf-json/' +
         escapedUri, function(err, res, body) {
@@ -205,7 +207,7 @@ module.exports.getDbpediaGraph = getDbpediaGraph
         subGraph = JSON.parse(body);
         cacheSubGraphs[entityUri] = subGraph;
       } catch (e) {
-        debug('No information for: ' + entityUri);
+        debug('No neighbors for: ' + entityUri);
       }
 
       // WARNING: it is impossible for 2 graphs (in this case) to have the same
