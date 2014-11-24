@@ -2,7 +2,7 @@
 
 
 /*
- * A partir des graphes rdf donnés dans le variable json, ce fichier génère un json (jsonOut) pour déterminer l'importances des 
+ * A partir des graphes rdf donnés dans le variable json, ce fichier génère un json (jsonOut) pour déterminer l'importances des
  * informations et leur valeurs.
  *
  * "triolets" correspond à une liste de "prédicats" pour le sujet subject.
@@ -10,14 +10,15 @@
  * {
  * 	"bestsList" : [2,0,1,3,...],
  * 	"subjectsList" : [
- * 		{	
+ * 		{
  * 			"subject" : sujet,
  * 			"frequency" : 1,
  * 			"triolets" : [
  * 				{
  * 					"predicat" : predicat,
  * 					"type" : type,
- * 					"value" : value
+ * 					"value" : value,
+ *					"lang" : lang
  * 			},
  * 				...
  * 			]
@@ -29,9 +30,6 @@
  *
  * avec frequency >= 1
  */
-
-
-
 
 /*
  * Functions
@@ -58,10 +56,10 @@ function presentInBest(list, i){
 /*
  * Génère jsonOut.bestsList pour le classement par fréquentation.
  */
-function bestSubjects(jsonOut, size){
+module.exports.bestSubjects = function(jsonOut, size){
 	var toReturn = jsonOut.bestsList;
 	var subjectsList = jsonOut.subjectsList;
-	
+
 
 	if(size > subjectsList.length)	size = subjectsList.length;
 
@@ -88,13 +86,13 @@ function bestSubjects(jsonOut, size){
 /*
  * Génère jsonOut.subjectsList
  */
-function explore(json, jsonOut){
+module.exports.explore = function(json, jsonOut){
 	//Exclude from the analysis
 	var noGood = "xmlns";
-	
 
-	var subjectsList = jsonOut.subjectsList;
-	resultats = json.results;
+
+	var subjectsList = jsonOut.subjectsList,
+			resultats = json.results;
 
 	for(root in resultats){
 		var text = resultats[root];
@@ -115,7 +113,8 @@ function explore(json, jsonOut){
 								{
 									"predicat" : predicat,
 									"type" : val.type,
-									"value" : val.value
+									"value" : val.value,
+									"lang": val.lang || ''
 								}
 							);
 						}
@@ -136,15 +135,16 @@ function explore(json, jsonOut){
 								{
 									"predicat" : predicat,
 									"type" : val.type,
-									"value" : val.value
+									"value" : val.value,
+									"lang": val.lang || ''
 								}
 							);
 						}
 					}
 				}
-				
-				
-				
+
+
+
 			}
 		}
 	}
@@ -156,7 +156,7 @@ function explore(json, jsonOut){
 
 
 
-
+/*
 // #Main
 var jsonOut = {
 	"bestsList" : [],
@@ -172,3 +172,4 @@ console.log("Longueur de la liste : " + jsonOut.subjectsList.length);
 for(var i=0, len=jsonOut.subjectsList.length ; i<len ; i++){
 	console.log("element " + i + " apparait " + jsonOut.subjectsList[i].frequency + " fois. Taille de triolet : " + jsonOut.subjectsList[i].triolets.length);
 }
+*/

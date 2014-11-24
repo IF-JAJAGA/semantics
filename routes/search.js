@@ -7,6 +7,7 @@ var
   app = require('../app'),
   searchEngines = require('../search-engines'),
   spotlight = require('../spotlight'),
+  triImportance = require('../triImportance'),
 
   // Router
   express = require('express'),
@@ -27,26 +28,24 @@ var
   getLocalizedProperty;
 
 getProperty = function(object, property, lang) {
-  var value = object[property];
-  if(!value)
+  var matchingTriples = _.where(object.triples, {predicat: property});
+  if(!matchingTriples.length)
     return {value: 'N/A'};
-  if(lang) {
-    var ret = _.find(value, function(prop) {
-      return prop.lang == lang;
-    });
-    return ret || value[0];
+  var matchingLangTriples = _.where(matchingTriples, {lang: lang});
+  if(matchingLangTriples.length) {
+    return matchingLangTriples[0];
   }
   else {
-    return value[0];
+    return matchingTriples[0];
   }
 };
 
-getEntityType = function(graph) {
-  var types = graph['http://www.w3.org/1999/02/22-rdf-syntax-ns#type'];
-  if(!types) {
+getEntityType = function(triples) {
+  var typeTriples = _.where(triples, {predicat: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type'});
+  if(!typeTriples.length) {
     return null;
   }
-  var isPerson = _.find(types, function(type) {
+  var isPerson = _.find(typeTriples, function(type) {
     return type.type == 'uri' && type.value == 'http://xmlns.com/foaf/0.1/Person';
   });
   if(isPerson) {
@@ -108,7 +107,7 @@ router.get('/', function(req, res, next) {
     }*/
 
     spotlight.getGraph({pages: pages, live: false, confidence: 0.3, support: 15}, function(err, graphs){
-      var entities = [],
+      /*var entities = [],
           leftValueObjects = {},
           objects = {},
           addToObjects = function(objects,object) {
@@ -161,6 +160,25 @@ router.get('/', function(req, res, next) {
               break;
             }
           }
+        }
+      });
+      */
+
+      var jsonOut = {
+            "bestsList" : [],
+            "subjectsList" : []
+          },
+          entities = [];
+      triImportance.explore(graphs, jsonOut);
+      triImportance.bestSubjects(jsonOut, 10);
+      _.each(jsonOut.bestsList, function(i) {
+        var object = jsonOut.subjectsList[i],
+            entityType = getEntityType(object.triolets);
+        debug('found : '+object.subject);
+        if(entityType) {
+          debug(object.subject+' detected as '+entityType);
+          var entity = _.extend({}, makeEntity(object, lang));
+          entities.push(entity);
         }
       });
 
