@@ -90,7 +90,8 @@ router.get('/', function(req, res, next) {
 
   //searchEngines.search(params.q, function(err, results) {
     //if (err) return next(new Error(err));
-    results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg","https://www.facebook.com/zuck","http://www.forbes.com/profile/mark-zuckerberg/","http://www.biography.com/people/mark-zuckerberg-507402","https://twitter.com/finkd","http://www.youtube.com/watch?v=baeLtRZbwgY","http://www.crunchbase.com/person/mark-zuckerberg","http://topics.bloomberg.com/mark-zuckerberg/","http://content.time.com/time/specials/packages/article/0,28804,2036683_2037183_2037185,00.html"];
+    //results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg","https://www.facebook.com/zuck","http://www.forbes.com/profile/mark-zuckerberg/","http://www.biography.com/people/mark-zuckerberg-507402","https://twitter.com/finkd","http://www.youtube.com/watch?v=baeLtRZbwgY","http://www.crunchbase.com/person/mark-zuckerberg","http://topics.bloomberg.com/mark-zuckerberg/","http://content.time.com/time/specials/packages/article/0,28804,2036683_2037183_2037185,00.html"];
+    results.pages = ["http://www.barrakobama.com/","https://twitter.com/barackobama","https://www.barackobama.com/","http://tinyurl.com/7362zk","https://www.facebook.com/barackobama","http://www.reuters.com/people/barack-obama","http://topics.bloomberg.com/barack-obama/","http://topics.wsj.com/person/O/barack-obama/4328","http://www.biography.com/people/barack-obama-12782369","http://www.chicagotribune.com/topic/politics/government/barack-obama-PEPLT007408-topic.html"];
     //results.pages = ['http://en.wikipedia.com/wiki/Mark_Zuckerberg'];
     debug('got table: ' + JSON.stringify(results.pages));
 
@@ -122,12 +123,12 @@ router.get('/', function(req, res, next) {
       triImportance.bestSubjects(jsonOut, 10);
 
       async.each(jsonOut.bestsList, function(i, nextIndice) {
-        var object = jsonOut.subjectsList[i],
-            entityType = getEntityType(object.triolets);
+        var object = jsonOut.subjectsList[i];
         // On ignore les sous-domaines de DBpedia
         if(regexSubDomain.test(object.subject)) {
           return nextIndice();
         }
+        var entityType = getEntityType(object.triolets);
         debug('found : '+object.subject);
         debug('\t'+object.triolets.length+' triolets');
         if(entityType) {
@@ -182,7 +183,7 @@ router.get('/', function(req, res, next) {
         next(err);
       });
     });
-  // });
+  //});
 });// router.get
 
 router.get('/', function(req,res,next) {
