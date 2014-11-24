@@ -1,18 +1,38 @@
 var 	json = require('../testToSpotlight.json'),
-	text = json["request"]["result"];
+	text = json["request"]["result"],
+	resultats = json.results;
 
 
 /*
- * subjectsList : Liste d'objets de la forme :
+ * A partir des graphes rdf donnés dans le variable json, ce fichier génère un json (jsonOut) pour déterminer l'importances des 
+ * informations et leur valeurs.
+ *
+ * "triolets" correspond à une liste de "prédicats" pour le sujet subject.
+ * A la fin on parcourt cette sous-liste triolets pour savoir quelle valeur on met dans notre affichage.
  * {
- * 	subject : "sujet",
- * 	frequency : "1"
+ * 	"bestsList" : [2,0,1,3,...],
+ * 	"subjectsList" : [
+ * 		{	
+ * 			"subject" : sujet,
+ * 			"frequency" : 1,
+ * 			"triolets" : [
+ * 				{
+ * 					"predicat" : predicat,
+ * 					"type" : type,
+ * 					"value" : value
+ * 				},
+ * 				...
+ * 			]
+ *
+ * 		},
+ * 		...
+ * 	]
  * }
- * frequency >= 1
+ *
+ * avec frequency >= 1
  */
-var subjectsList = [];
 
-resultats = json.results;
+
 
 
 /*
@@ -38,12 +58,12 @@ function presentInBest(list, i){
 }
 
 /*
- * La fonction bestSubjects génère une liste de @param size éléments
- * voulus classée par ordre décroissant de nombres d'apparitions dans la 
- * liste @param subjectsList.
+ * Génère jsonOut.bestsList pour le classement par fréquentation.
  */
-function bestSubjects(subjectsList, size){
-	var toReturn=[];
+function bestSubjects(jsonOut, size){
+	var toReturn = jsonOut.bestsList;
+	var subjectsList = jsonOut.subjectsList;
+	
 
 	if(size > subjectsList.length)	size = subjectsList.length;
 
@@ -64,69 +84,91 @@ function bestSubjects(subjectsList, size){
 		toReturn.push(addIndice);
 		if(max==0)	max = maxBoucle;
 	}
-	return toReturn;
+}
+
+
+/*
+ * Génère jsonOut.subjectsList
+ */
+function explore(json, jsonOut){
+	//Exclude from the analysis
+	var noGood = "xmlns";
+
+
+	var subjectsList = jsonOut.subjectsList;
+	for(root in resultats){
+		var text = resultats[root];
+		for(link in text){
+			if(link.indexOf(noGood) != 0 ){
+				var subjectInList = find(link,subjectsList);
+				if(subjectInList == undefined){
+					var toAdd={
+						"subject" : link,
+						"frequency" : 1,
+						"triolets" : []
+					}
+					var lien = text[link];
+					for(predicat in lien){
+						for(var i=0, len=lien[predicat].length ; i<len ; i++){
+							var val = lien[predicat][i];
+							toAdd.triolets.push(
+								{
+									"predicat" : predicat,
+									"type" : val.type,
+									"value" : val.value
+								}
+							);
+						}
+					}
+
+					subjectsList.push(toAdd);
+
+				}
+				else {
+					var toModify = subjectsList[subjectInList];
+					toModify.frequency = toModify.frequency + 1;
+					//On ajoute les prédicats pour le sujet
+					var lien = text[link];
+					for(predicat in lien){
+						for(var i=0, len=lien[predicat].length ; i<len ; i++){
+							var val = lien[predicat][i];
+							toModify.triolets.push(
+								{
+									"predicat" : predicat,
+									"type" : val.type,
+									"value" : val.value
+								}
+							);
+						}
+					}
+				}
+				
+				
+				
+			}
+		}
+	}
 }
 
 /*
  * End of functions
  */
 
-/*
- * Exclude from the analysis
- */
-var noGood = "xmlns";
-/*
- * End of exclude
- */
 
-for(root in resultats){
-	var text = resultats[root];
-	for(link in text){
-		if(link.indexOf(noGood) != 0 ){
-			var subjectInList = find(link,subjectsList);
-			if(subjectInList == undefined){
-				subjectsList.push(
-					{
-						"subject" : link,
-						"frequency" : 1,
-						/*
-						 * TODO : solution pour stocker les prédicats, histoire de pas avoir à tout reparcourir une fois qu'on a classé nos sujets par fréquentations.
-						 * Membre triolets qui correspond à une liste de 
-						"triolets " : [
-							{
-								"role" : role,
-								"value" : value
-							},
-							{
-								"role2" : role2,
-								"value2" : value2
-							},
-							...
-						]
-						A la fin on parcourerait cette sous-liste triolets pour savoir quelle valeur on met dans notre affichage.
-						*/
-					}
-				)
-			}
-			else {
-				subjectsList[subjectInList].frequency = subjectsList[subjectInList].frequency + 1;
-			}
-			
-			
-			var lien = text[link];
-			for(list in lien){
-				//console.log("list.toString : " + list.toString());
-				var val = lien[list][0];
-				//console.log("val.value : " + val.value);
-			}
-		}
-	}
+
+
+// #Main
+var jsonOut = {
+	"bestsList" : [],
+	"subjectsList" : []
 }
 
-var bestsList = bestSubjects(subjectsList, 20);
-console.log("bestsList : " + bestsList.toString());
+explore(json, jsonOut);
+bestSubjects(jsonOut, 10);
 
-console.log("Longueur de la liste : " + subjectsList.length);
-for(var i=0, len=subjectsList.length ; i<len ; i++){
-	console.log("element " + i + " apparait " + subjectsList[i].frequency + " fois.");
+//Logs
+console.log("bestsList : " + jsonOut.bestsList.toString());
+console.log("Longueur de la liste : " + jsonOut.subjectsList.length);
+for(var i=0, len=jsonOut.subjectsList.length ; i<len ; i++){
+	console.log("element " + i + " apparait " + jsonOut.subjectsList[i].frequency + " fois. Taille de triolet : " + jsonOut.subjectsList[i].triolets.length);
 }
