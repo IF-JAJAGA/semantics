@@ -16,6 +16,7 @@ var
   // Helper
   debug = require('debug')('search'),
   _ = require('underscore'),
+  async = require('async'),
 
   entityTypes = {
     PERSON: 'PERSON',
@@ -25,12 +26,13 @@ var
   makeEntity,
   makePerson,
   getEntityType,
-  getLocalizedProperty;
+  getProperty;
 
 getProperty = function(object, property, lang) {
-  var matchingTriples = _.where(object.triples, {predicat: property});
+  var matchingTriples = _.where(object.triolets, {predicat: property});
   if(!matchingTriples.length)
     return {value: 'N/A'};
+  debug('\t\t'+property+' : '+matchingTriples);
   var matchingLangTriples = _.where(matchingTriples, {lang: lang});
   if(matchingLangTriples.length) {
     return matchingLangTriples[0];
@@ -56,7 +58,7 @@ getEntityType = function(triples) {
 
 makeEntity = function(object,lang) {
   var entity = {
-    type: getEntityType(object),
+    type: getEntityType(object.triolets),
     label : getProperty(object,'http://www.w3.org/2000/01/rdf-schema#label',lang).value,
     wikiUrl: getProperty(object,'http://xmlns.com/foaf/0.1/isPrimaryTopicOf').value,
     abstract: getProperty(object,'http://dbpedia.org/ontology/abstract',lang).value,
@@ -86,11 +88,11 @@ router.get('/', function(req, res, next) {
       results = {};
   debug('requête : ' + params.q);
 
-  // searchEngines.search(params.q, function(err, results) {
+  //searchEngines.search(params.q, function(err, results) {
+    //if (err) return next(new Error(err));
     results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg","https://www.facebook.com/zuck","http://www.forbes.com/profile/mark-zuckerberg/","http://www.biography.com/people/mark-zuckerberg-507402","https://twitter.com/finkd","http://www.youtube.com/watch?v=baeLtRZbwgY","http://www.crunchbase.com/person/mark-zuckerberg","http://topics.bloomberg.com/mark-zuckerberg/","http://content.time.com/time/specials/packages/article/0,28804,2036683_2037183_2037185,00.html"];
-    // if (err) return next(new Error(err));
+    //results.pages = ['http://en.wikipedia.com/wiki/Mark_Zuckerberg'];
     debug('got table: ' + JSON.stringify(results.pages));
-    //pages = ['http://en.wikipedia.com/wiki/Mark_Zuckerberg'];
 
     /*var terms = params.q.split(' ');
     if(terms.indexOf('mark') >= 0) {
@@ -109,91 +111,91 @@ router.get('/', function(req, res, next) {
     }*/
 
     spotlight.getGraph({pages: results.pages, live: false, confidence: 0.3, support: 15}, function(err, graphs){
-      /*var entities = [],
-          leftValueObjects = {},
-          objects = {},
-          addToObjects = function(objects,object) {
-            if(objects.hasOwnProperty(object)) {
-              objects[object]++;
-            }
-            else {
-              objects[object] = 1;
-            }
-          };
-
-      //debug(JSON.stringify(graphs));
-      for (url in graphs) {
-        var graph = graphs[url];
-        //debug('url : '+url);
-        for (objectKey in graphs[url]) {
-          var object = graphs[url][objectKey];
-          debug('found for ' + objectKey);
-          //debug(graphs[url]);
-          addToObjects(objects,objectKey);
-          leftValueObjects[objectKey] = object;
-          for(predicateKey in object) {
-            _.each(object[predicateKey], function(target) {
-              if(target.type == 'uri')
-                addToObjects(objects,target.value);
-            });
-          }
-        }
-      }
-
-      var pairs = _.pairs(objects),
-          sortedObjects = _.sortBy(pairs, function(obj) {
-            return obj[1];
-          }),
-          bestObjectsReverse = _.last(sortedObjects,10),
-          bestObjects = [];
-      for(var i = (bestObjectsReverse.length-1); i>=0; i--) {
-        bestObjects.push(bestObjectsReverse[i]);
-      }
-      debug('top objects :');
-      _.each(bestObjects, function(value) {
-        debug(value[0]+' : '+value[1]);
-        for(objectKey in leftValueObjects) {
-          if(objectKey == value[0]) {
-            var entityType = getEntityType(leftValueObjects[objectKey]);
-            if(entityType) {
-              debug(objectKey+' detected as '+entityType);
-              var entity = _.extend({}, makeEntity(leftValueObjects[objectKey], lang));
-              entities.push(entity);
-              break;
-            }
-          }
-        }
-      });
-      */
-
       var jsonOut = {
             "bestsList" : [],
             "subjectsList" : []
           },
-          entities = [];
+          entities = [],
+          regexSubDomain = new RegExp('^http\:\/\/[a-zA-Z]+\.dbpedia\.org\/.+','i');
+      debug('found '+_.keys(graphs).length+' graphs');
       triImportance.explore(graphs, jsonOut);
       triImportance.bestSubjects(jsonOut, 10);
-      _.each(jsonOut.bestsList, function(i) {
+
+      async.each(jsonOut.bestsList, function(i, nextIndice) {
         var object = jsonOut.subjectsList[i],
             entityType = getEntityType(object.triolets);
+        // On ignore les sous-domaines de DBpedia
+        if(regexSubDomain.test(object.subject)) {
+          return nextIndice();
+        }
         debug('found : '+object.subject);
+        debug('\t'+object.triolets.length+' triolets');
         if(entityType) {
           debug(object.subject+' detected as '+entityType);
           var entity = _.extend({}, makeEntity(object, lang));
           entities.push(entity);
+          return nextIndice();
         }
+        else {
+          async.waterfall([
+            function(callback) {
+              // On recherche le subject sur DBpedia
+              spotlight.getDbpediaGraph(false,[object.subject], callback);
+            },
+            function(graph, callback) {
+              debug('DBpedia : '+object.subject);
+              var uri = object.subject;
+              triImportance.getSubjectFromGraph(uri,graph[uri],callback);
+            },
+            function(subject, callback) {
+              debug('\t'+subject.triolets.length+' triples found');
+              var entityType = getEntityType(subject.triolets);
+              if(entityType) {
+                debug('\tDetected as '+entityType);
+                callback(null, subject);
+              }
+              else {
+                callback(new Error('wrong entityType'));
+              }
+            },
+            function(subject, callback) {
+              var entity = _.extend({}, makeEntity(subject, lang));
+              debug('\tSuccessfully crafted');
+              callback(null, entity);
+            }
+          ],
+          function(err,entity) {
+            if(!err) {
+              entities.push(entity);
+              debug('\tPushed');
+            }
+            return nextIndice();
+          });// async.waterfall
+        }
+      },
+      function(err) {
+        if(!err) {
+          debug('sending response...');
+          res.selectedLang = lang;
+          res.entities = entities;
+        }
+        next(err);
       });
-
-      if (req.accepts('text/html')) {
-        res.render('search', {title: 'Résultats de la requête', inputValue: params.q, selectedLang: lang, entities: entities});
-      } else if (req.accepts('json')) {
-        res.set('Content-Type', 'application/json');
-        res.status(200).send(JSON.stringify({q: params.q, entities: entities}));
-      } else {
-        res.status(406).send('Not Acceptable');
-      }
     });
   // });
+});// router.get
+
+router.get('/', function(req,res,next) {
+  var params = req.query;
+  debug('Lang : '+res.selectedLang);
+  if (req.accepts('text/html')) {
+    res.render('search', {title: 'Résultats de la requête', inputValue: params.q, selectedLang: res.selectedLang, entities: res.entities});
+  } else if (req.accepts('json')) {
+    res.set('Content-Type', 'application/json');
+    res.status(200).send(JSON.stringify({q: params.q, entities: res.entities}));
+  } else {
+    res.status(406).send('Not Acceptable');
+  }
 });
 
 module.exports = router;

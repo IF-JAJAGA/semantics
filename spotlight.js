@@ -65,7 +65,7 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
           debug(err.stack);
         }
         results[pageUri] = graph;
-        nextUri();
+        return nextUri();
       });
 
     })

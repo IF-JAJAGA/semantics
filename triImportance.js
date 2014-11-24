@@ -1,5 +1,5 @@
 //var 	json = require('../testToSpotlight.json');
-
+var _ = require('underscore');
 
 /*
  * A partir des graphes rdf donnés dans le variable json, ce fichier génère un json (jsonOut) pour déterminer l'importances des
@@ -92,12 +92,12 @@ module.exports.explore = function(json, jsonOut){
 
 
 	var subjectsList = jsonOut.subjectsList,
-			resultats = json.results;
+			resultats = json;
 
 	for(root in resultats){
 		var text = resultats[root];
 		for(link in text){
-			if(link.indexOf(noGood) != 0 ){
+			if(link.indexOf(noGood) != 0){
 				var subjectInList = find(link,subjectsList);
 				if(subjectInList == undefined){
 					var toAdd={
@@ -149,6 +149,28 @@ module.exports.explore = function(json, jsonOut){
 		}
 	}
 }
+
+/*
+	Cette fonction accepte une URI, le graph (liste de prédicats) associé à cette URI.
+	Elle retourne un subject comme indiqué tout en haut de ce fichier
+*/
+module.exports.getSubjectFromGraph = function(uri, graph, callback) {
+	var subject = {
+		subject: uri,
+		triolets: []
+	};
+	for(predicate in graph) {
+		_.each(graph[predicate], function(object) {
+			subject.triolets.push({
+				predicat: predicate,
+				type: object.type,
+				value: object.value,
+				lang: object.lang || ''
+			});
+		});
+	}
+	callback(null, subject);
+};
 
 /*
  * End of functions
