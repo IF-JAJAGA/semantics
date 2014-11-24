@@ -10,9 +10,9 @@ html(lang='fr')
     style
       include ./includes/css/above.min.css
 
-    link(rel='stylesheet', href='/css/semantics-template.css', async)
     //
       link(rel='stylesheet', href='/css/bootstrap.min.css', async)
+      link(rel='stylesheet', href='/css/semantics-template.css', async)
 
   body
     include ./includes/menu.jade
@@ -25,11 +25,6 @@ html(lang='fr')
     script(src='/js/bootstrap-select.js')
     script(src='/js/jquery.tiling.js')
     script.
-      (function(d, t) {
-          var g = document.createElement(t);
-          g.rel = 'stylesheet';
-          g.href = '/css/bootstrap.min.css';
-          d.appendChild(g);
-      }(document.head, 'link'));
       $('.selectpicker').selectpicker();
       $('.tiling').tiling();
+    script function a(t, h){var g=document.createElement(t);g.rel='stylesheet';g.href=h;document.head.appendChild(g);}a('link','/css/bootstrap.min.css');a('link','/css/semantics-template.css');
