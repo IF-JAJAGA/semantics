@@ -18,13 +18,12 @@ block content
   .row
     include ./includes/search-field.jade
   .row
-    .entity-container
-      table
-        each entity,index in entities
-          tr.entity(data-toggle='modal',data-target='#entityModal'+index)
-            td.entity-img
-                img(src=entity.thumbnail, alt=entity.caption)
-            td.entity-content
-              h4= entity.label
-              p= entity.description
-          +modal('entityModal'+index,entity.label,entity.abstract,entity.wikiUrl)
+    table.entity-container
+      each entity,index in entities
+        tr.entity(data-toggle='modal',data-target='#entityModal'+index)
+          td.entity-img
+              img(src=entity.thumbnail, alt=entity.caption)
+          td.entity-content
+            h4= entity.label
+            p= entity.description
+        +modal('entityModal'+index,entity.label,entity.abstract,entity.wikiUrl)
