@@ -15,6 +15,7 @@ var
 
   // Helper
   debug = require('debug')('search'),
+  progress = require('debug')('progress'),
   _ = require('underscore'),
   async = require('async'),
 
@@ -88,6 +89,7 @@ router.get('/', function(req, res, next) {
       results = {};
   debug('requête : ' + params.q);
 
+  progress('Search engines working...');
   //searchEngines.search(params.q, function(err, results) {
     //if (err) return next(new Error(err));
     //results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg","https://www.facebook.com/zuck","http://www.forbes.com/profile/mark-zuckerberg/","http://www.biography.com/people/mark-zuckerberg-507402","https://twitter.com/finkd","http://www.youtube.com/watch?v=baeLtRZbwgY","http://www.crunchbase.com/person/mark-zuckerberg","http://topics.bloomberg.com/mark-zuckerberg/","http://content.time.com/time/specials/packages/article/0,28804,2036683_2037183_2037185,00.html"];
@@ -111,6 +113,7 @@ router.get('/', function(req, res, next) {
       entities.push(entity);
     }*/
 
+    progress('Anotating pages...');
     spotlight.getGraph({pages: results.pages, live: false, confidence: 0.3, support: 15}, function(err, graphs){
       var jsonOut = {
             "bestsList" : [],
@@ -122,8 +125,13 @@ router.get('/', function(req, res, next) {
       triImportance.explore(graphs, jsonOut);
       triImportance.bestSubjects(jsonOut, 10);
 
+      var nbBests = jsonOut.bestsList.length,
+          noIteration = 1;
       async.each(jsonOut.bestsList, function(i, nextIndice) {
         var object = jsonOut.subjectsList[i];
+
+        progress('Analizing entity ('+(noIteration++)+'/'+nbBests+')');
+
         // On ignore les sous-domaines de DBpedia
         if(regexSubDomain.test(object.subject)) {
           return nextIndice();
@@ -176,6 +184,7 @@ router.get('/', function(req, res, next) {
       },
       function(err) {
         if(!err) {
+          progress('Sending response...');
           debug('sending response...');
           res.selectedLang = lang;
           res.entities = entities;
