@@ -11,7 +11,11 @@ var
   compression = require('compression'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser');
+  bodyParser = require('body-parser'),
+
+  // Modules
+  spotlight = require('./spotlight'),
+  search = require('./search-engines');
 
 module.exports = app;
 
@@ -41,7 +45,43 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+// Setup cache
+app.set('cacheToSaveNb', 3);
 
+process.on('SIGINT', function() {
+  var save = require('./save-cache'),
+    async = require('async'),
+    debug = require('debug')('save-cache');
+
+  async.parallel([
+    function(next) {
+      debug('spotlight', spotlight.cacheGraphs);
+      save.saveCache('graphs.json', spotlight.cacheGraphs, function(err) {
+        next(err);
+      });
+    },
+
+    function(next) {
+      save.saveCache('subgraphs.json', spotlight.cacheSubGraphs, function(err) {
+        debug('spotlight-2', spotlight.cacheSubGraphs);
+        next(err);
+      });
+    },
+
+    function(next) {
+      save.saveCache('requests.json', search.cacheRequests, function(err) {
+        debug('requests', search.cacheRequests);
+        next(err);
+      });
+    }
+    ],
+
+    function(err) {
+      if (err) debug(err);
+      process.exit(err);
+    }
+  );
+});
 
 /* Error handlers */
 

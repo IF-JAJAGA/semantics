@@ -18,9 +18,16 @@ var request = require('request'),
   CX = '016583123162265953650:aiks_s3sch8',
   cacheRequests = {};
 
+module.exports.cacheRequests = cacheRequests;
+
+require('./save-cache').loadCache('requests.json', function (err, requests) {
+  if (err) debug(err);
+  cacheRequests = requests;
+});
+
 module.exports.search = search = function(query, done) {
 	if(cacheRequests.hasOwnProperty(query) && cacheRequests[query]){
-		return done(null, cacheRequests[query].pages);	//TODO Vérifier que ça marche
+		return done(null, cacheRequests[query]);	//TODO Vérifier que ça marche
 	}
   google.build(function(api) {
     api.customsearch.cse.list({cx: CX, q: query, auth: API_KEY}, function(result) {
@@ -36,7 +43,7 @@ module.exports.search = search = function(query, done) {
         uri_tab.push(result.items[i].link);
       }
 
-/*
+
       handleResources(uri_tab, function(err, result_g){
         var json_final;
         //console.log(JSON.stringify(result_g,undefined,4));
@@ -45,11 +52,9 @@ module.exports.search = search = function(query, done) {
             results : result_graph,
             pages: uri_tab};
 
+        cacheRequests[query] = json_final;
         return done(null, json_final);
       });
-*/		
-		cacheRequests[query] = json_final;	//TODO Vérifier
-        return done(null, {pages: uri_tab});
     });
   });
 }
@@ -97,34 +102,4 @@ handleResources = function(resources, done) {
     done(null, result);
   }
 );
-}
-
-//TODO Verify these functions
-/**
- * Saves the graph in a file
- * @param {string} fileName - Name of the file in which data will be stored in ./cache/
- *								You have to define the extension
- * @param {object} graph - Object that will be stored
- * @param {doneCallback} done - Function that will be called when saving is done
- */
-module.exports.saveCache = saveCache = function(fileName, graph, done){
-	fs.writeFile('./cache/'+fileName, JSON.stringify(graph), function(err){
-		if(err) debug('Error when writing cache ' + err);
-		done();
-	});
-}
-
-/**
- * Loads the graph in a file
- * @param {string} fileName - Name of the file from which data will be loaded in ./cache/
- *								You have to define the extension
- * @param {doneCallback} done - Function that will be called when loading is done
- */
-module.exports.loadCache = loadCache = function(fileName, graph, done){
-	fs.readFile('./cache/'+fileName, function(err, data){
-		var graph;
-		if(err) debug('Error when loading data ' + err);
-		graph = JSON.parse(data);
-		done(err, graph);
-	});
 }
