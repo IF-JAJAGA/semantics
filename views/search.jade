@@ -21,12 +21,14 @@ block content
     .entity-container
       .tiling
         ul.list
+          table
           each entity,index in entities
-            li.tile.is-entity
-              .entity(data-toggle='modal',data-target='#entityModal'+index)
-                .entity-content
-                  h4= entity.label
-                  p= entity.description
-                .entity-img
-                    img.entity-img(src=entity.thumbnail, alt=entity.caption)
-              +modal('entityModal'+index,entity.label,entity.abstract,entity.wikiUrl)
+            tr
+              td
+                .entity(data-toggle='modal',data-target='#entityModal'+index)
+                  .entity-content
+                    h4= entity.label
+                    p= entity.description
+                    .entity-img
+                      img.entity-img(src=entity.thumbnail, alt=entity.caption)
+                +modal('entityModal'+index,entity.label,entity.abstract,entity.wikiUrl)

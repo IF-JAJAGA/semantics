@@ -23,6 +23,16 @@ var
   cacheGraphs = {},
   cacheSubGraphs = {};
 
+require('./save-cache').loadCache('graphs.json', function (err, graphs) {
+  if (err) debug(err);
+  cacheGraphs = graphs;
+});
+
+require('./save-cache').loadCache('subgraphs.json', function (err, subgraphs) {
+  if (err) debug(err);
+  cacheSubGraphs = subgraphs;
+});
+
 /**
  * @callback doneCallback
  * @param {*} [err] - Information about the error (evaluates to false if OK)
@@ -69,6 +79,7 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
           debug('Error for page ' + pageUri + '\n' + err.stack);
         }
         cacheGraphs[pageUri] = graph;
+        console.dir(cacheGraphs);
         results[pageUri] = graph;
         ++doneNb;
         progress(doneNb + ' / ' + totalNb);
@@ -232,3 +243,34 @@ module.exports.getDbpediaGraph = getDbpediaGraph
     return cbResult(null, graph);
   });
 };
+
+/**
+* Saves the graph in a file
+* @param {string} fileName - Name of the file in which data will be stored in ./cache/
+*								You have to define the extension
+* @param {object} graph - Object that will be stored
+* @param {doneCallback} done - Function that will be called when saving is done
+*/
+module.exports.saveCache = saveCache = function(fileName, done){
+  fs.writeFile('./cache/'+fileName, JSON.stringify(cacheRequests), function(err){
+    if(err) debug('Error when writing cache ' + err);
+    done();
+  });
+}
+
+/**
+* Loads the graph in a file
+* @param {string} fileName - Name of the file from which data will be loaded in ./cache/
+*								You have to define the extension
+* @param {doneCallback} done - Function that will be called when loading is done
+*/
+module.exports.loadCache = loadCache = function(fileName, done){
+  fs.readFile('./cache/'+fileName, function(err, data){
+    if(err) debug('Error when loading data ' + err);
+    cacheRequests = JSON.parse(data);
+    done(err, cacheRequests);
+  });
+}
+
+module.exports.cacheGraphs = cacheGraphs;
+module.exports.cacheSubGraphs = cacheSubGraphs;
