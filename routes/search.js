@@ -27,20 +27,21 @@ var
   makeEntity,
   makePerson,
   getEntityType,
-  getProperty;
+  getProperty,
+  getEntity;
 
 getProperty = function(object, property, lang) {
   var matchingTriples = _.where(object.triolets, {predicat: property});
   if(!matchingTriples.length)
-    return {value: 'N/A'};
+    return {value: null};
   debug('\t\t'+property+' : '+matchingTriples);
-  var matchingLangTriples = _.where(matchingTriples, {lang: lang});
-  if(matchingLangTriples.length) {
-    return matchingLangTriples[0];
+  if(lang) {
+    var matchingLangTriples = _.where(matchingTriples, {lang: lang});
+    if(matchingLangTriples.length) {
+      return matchingLangTriples[0];
+    }
   }
-  else {
-    return matchingTriples[0];
-  }
+  return matchingTriples[0];
 };
 
 getEntityType = function(triples) {
@@ -55,31 +56,53 @@ getEntityType = function(triples) {
     return entityTypes.PERSON;
   }
   return entityTypes.OTHER;
-}
+};
+
+getEntity = function(object,fields) {
+  var entity = {};
+  _.each(fields, function(field) {
+    var required = (field[2] && field[2].required ? true : false),
+        property = getProperty(object,field[1],(field[2] ? field[2].lang : undefined));
+    if(!property.value) {
+      if(required) {
+        property.value = 'N/A';
+      }
+    }
+    else {
+      entity[field[0]] = property.value;
+    }
+  });
+  return entity;
+};
 
 makeEntity = function(object,lang) {
-  var entity = {
-    type: getEntityType(object.triolets),
-    label : getProperty(object,'http://www.w3.org/2000/01/rdf-schema#label',lang).value,
-    wikiUrl: getProperty(object,'http://xmlns.com/foaf/0.1/isPrimaryTopicOf').value,
-    abstract: getProperty(object,'http://dbpedia.org/ontology/abstract',lang).value,
-    description: getProperty(object,'http://www.w3.org/2000/01/rdf-schema#comment',lang).value.slice(0,42)+'...'
-  };
-  if(image = getProperty(object,'http://xmlns.com/foaf/0.1/depiction'))
-    entity.image = image.value;
-  if(caption = getProperty(object,'http://dbpedia.org/property/imageCaption'))
-    entity.caption = caption.value;
-  if(caption = getProperty(object,'http://dbpedia.org/property/caption'))
-    entity.caption = caption.value;
-  if(thumbnail = getProperty(object,'http://dbpedia.org/ontology/thumbnail'))
-    entity.thumbnail = thumbnail.value;
+  var fields = [
+        // key,URI,[options(required,lang)]
+        ['label','http://www.w3.org/2000/01/rdf-schema#label',{required: true, lang: lang}],
+        ['wikiUrl','http://xmlns.com/foaf/0.1/isPrimaryTopicOf',{required: true}],
+        ['abstract','http://dbpedia.org/ontology/abstract',{required: true, lang: lang}],
+        ['description','http://www.w3.org/2000/01/rdf-schema#comment',{lang: lang}],
+        ['image','http://xmlns.com/foaf/0.1/depiction'],
+        ['caption','http://dbpedia.org/property/imageCaption'],
+        ['caption','http://dbpedia.org/property/caption'],
+        ['thumbnail','http://dbpedia.org/ontology/thumbnail']
+      ],
+      entity = {
+        type: getEntityType(object.triolets)
+      };
+  entity = _.extend(entity,getEntity(object,fields));
+  if(!entity.description) {
+    entity.description = entity.abstract.slice(0,242)+'...';
+  }
   return entity;
 };
 
 makePerson = function(object,lang) {
-  var entity = {
-    description: getProperty(object,'http://purl.org/dc/elements/1.1/description',lang).value
-  };
+  var fields = [
+        ['description','http://purl.org/dc/elements/1.1/description',{lang: lang}]
+      ],
+      entity = {};
+  entity = _.extend(entity,getEntity(object,fields));
   return entity;
 };
 
@@ -92,8 +115,8 @@ router.get('/', function(req, res, next) {
   progress('Search engines working...');
   //searchEngines.search(params.q, function(err, results) {
   //if (err) return next(new Error(err));
-    results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg"];
-    // results.pages = ["http://www.barrakobama.com/","https://twitter.com/barackobama","https://www.barackobama.com/","http://tinyurl.com/7362zk","https://www.facebook.com/barackobama","http://www.reuters.com/people/barack-obama","http://topics.bloomberg.com/barack-obama/","http://topics.wsj.com/person/O/barack-obama/4328","http://www.biography.com/people/barack-obama-12782369","http://www.chicagotribune.com/topic/politics/government/barack-obama-PEPLT007408-topic.html"];
+    //results.pages = ["http://wiki.verkata.com/fr/wiki/Mark_Zuckerberg","http://en.wikipedia.com/wiki/Mark_Zuckerberg"];
+    results.pages = ["http://www.barrakobama.com/","https://twitter.com/barackobama","https://www.barackobama.com/","http://tinyurl.com/7362zk","https://www.facebook.com/barackobama","http://www.reuters.com/people/barack-obama","http://topics.bloomberg.com/barack-obama/","http://topics.wsj.com/person/O/barack-obama/4328","http://www.biography.com/people/barack-obama-12782369","http://www.chicagotribune.com/topic/politics/government/barack-obama-PEPLT007408-topic.html"];
     //results.pages = ['http://en.wikipedia.com/wiki/Mark_Zuckerberg'];
     debug('got table: ' + JSON.stringify(results.pages));
 

@@ -69,6 +69,7 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
   async.each(userOptions.pages, function(pageUri, nextUri) {
     if (cacheGraphs.hasOwnProperty(pageUri) && cacheGraphs[pageUri]) {
       results[pageUri] = cacheGraphs[pageUri];
+      progress('Using cache for ['+pageUri+']');
       return nextUri();
     }
 
@@ -79,7 +80,7 @@ module.exports.getGraph = getGraph = function(userOptions, done) {
           debug('Error for page ' + pageUri + '\n' + err.stack);
         }
         cacheGraphs[pageUri] = graph;
-        console.dir(cacheGraphs);
+        //console.dir(cacheGraphs);
         results[pageUri] = graph;
         ++doneNb;
         progress(doneNb + ' / ' + totalNb);

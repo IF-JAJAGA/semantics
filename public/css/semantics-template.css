@@ -1,42 +1,9 @@
-/*
-.entity {
-  text-align: left;
-  padding: 5px;
-  width:100%;
-}
-.entity:hover {
-  cursor: pointer;
-  border: 2px solid black;
-}
-.entity-img {
-  width: 100%;
-}*/
 .entity-container {
-  /*margin-top: 10px;
-  padding: 5px;
-  border-radius:3px;*/
   background-color: #F2F2F2;
   width:100%;
   border-radius: 3px;
 }
-.list {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  overflow: hidden;
-}
-.tile {
-  display: table-cell;
-  width: 20%;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.is-entity:hover {
-  border: 2px solid black;
-}
 .entity {
-  /*width: 100%;
-  height: 100%;*/
   width: 100%;
   text-align: left;
   padding: 5px;
@@ -55,6 +22,5 @@
 .entity-img img {
   display:block;
   max-height: 100px;
-  width: 100%;
   height: 100%;
 }
